@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Camera : MonoBehaviour
 {
+    public Rat[] allPlayers;
     // Start is called before the first frame update
     void Start()
     {
-        
+        allPlayers = FindObjectsOfType<Rat>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 newPos = new Vector3(0f, 0f, -10f);
+        foreach (Rat rat in allPlayers)
+        {
+            newPos.x = newPos.x + rat.transform.position.x;
+            newPos.y = newPos.y + rat.transform.position.y;
+        }
+        newPos.x = newPos.x / allPlayers.Length;
+        newPos.y = newPos.y / allPlayers.Length;
+        this.transform.position = newPos;
     }
 }

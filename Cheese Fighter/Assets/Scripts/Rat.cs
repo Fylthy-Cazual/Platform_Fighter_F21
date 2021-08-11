@@ -192,15 +192,16 @@ public class Rat : MonoBehaviour
     IEnumerator specialG() //grounded special attack
     {
         action = true;
+        animator.SetTrigger("Special-Ground");
         for (int i = 0; i < 25; i++)
         {
             yield return Utils.Frames(1);
         }
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
-                    5f, 5, 10, 
+                    5f, 15, 10, 
                     3 * dir, 1, 5, 
                     2);
-        p.setSpeedX(0.5f * dir);
+        p.setSpeedX(0.1f * dir);
         for (int i = 0; i < 5; i++)
         {
             yield return Utils.Frames(1);

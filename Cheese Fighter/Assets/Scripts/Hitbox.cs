@@ -54,6 +54,11 @@ public class Hitbox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        spawn();
+    }
+
+    public void spawn()
+    {
         transform.position = new Vector3(attacker.position.x + xPos,
                                         attacker.position.y + yPos,
                                         attacker.position.z);

@@ -17,6 +17,7 @@ public class Rat : MonoBehaviour
     public bool action; //True if Player is performing an action, False otherwise.
 
     public Hitbox hitboxInstance;
+    public Projectile projectileInstance;
     public JumpRing jr;
     public Trail trail;
 
@@ -62,9 +63,13 @@ public class Rat : MonoBehaviour
                 animator.SetFloat("Speed", 0f);
             }
 
-            if(Input.GetKeyDown(KeyCode.J))
+            if (Input.GetKeyDown(KeyCode.J))
             {
                 jab();
+            }
+            else if (Input.GetKeyDown(KeyCode.K))
+            {
+                special();
             }
         }
     }
@@ -139,7 +144,12 @@ public class Rat : MonoBehaviour
         }
     }
 
-    IEnumerator jabG()
+    public void special()
+    {
+        StartCoroutine(specialG());
+    }
+
+    IEnumerator jabG() //grounded normalk attack
     {
         action = true;
         animator.SetTrigger("Jab-Ground");
@@ -153,7 +163,7 @@ public class Rat : MonoBehaviour
         animator.SetTrigger("Return");
     }
 
-    IEnumerator jabA()
+    IEnumerator jabA() //aerial normal attack
     {
         action = true;
         animator.SetTrigger("Jab-Air");
@@ -175,6 +185,26 @@ public class Rat : MonoBehaviour
             yield return Utils.Frames(1);
         }
         yield return Utils.Frames(4);
+        action = false;
+        animator.SetTrigger("Return");
+    }
+
+    IEnumerator specialG() //grounded special attack
+    {
+        action = true;
+        for (int i = 0; i < 25; i++)
+        {
+            yield return Utils.Frames(1);
+        }
+        Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
+                    5f, 5, 10, 
+                    3 * dir, 1, 5, 
+                    2);
+        p.setSpeedX(0.5f * dir);
+        for (int i = 0; i < 5; i++)
+        {
+            yield return Utils.Frames(1);
+        }
         action = false;
         animator.SetTrigger("Return");
     }
@@ -206,7 +236,7 @@ public class Rat : MonoBehaviour
         animator.SetTrigger("Return");
     }
 
-    public void makeHitbox(float xPos, float yPos, float width, 
+    public Hitbox makeHitbox(float xPos, float yPos, float width, 
                             float height, int duration, float damage,
                             float xLaunch, float yLaunch, float hitstun,
                             float blockstun)
@@ -215,6 +245,19 @@ public class Rat : MonoBehaviour
         hbox.setHitbox(this.transform, gameObject.tag, xPos, yPos, width, 
                         height, duration, damage, xLaunch, yLaunch,
                         hitstun, blockstun);
+        return hbox;
+    }
+
+    public Projectile makeProjectile(float xPos, float yPos, float width, 
+                            float height, int duration, float damage,
+                            float xLaunch, float yLaunch, float hitstun,
+                            float blockstun)
+    {
+        Projectile proj = Instantiate(projectileInstance);
+        proj.setHitbox(this.transform, gameObject.tag, xPos, yPos, width, 
+                        height, duration, damage, xLaunch, yLaunch,
+                        hitstun, blockstun);
+        return proj;
     }
 
     #endregion

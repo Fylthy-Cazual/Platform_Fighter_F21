@@ -774,6 +774,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   action: 0
   hitboxInstance: {fileID: 611896959018789032, guid: 9dc1651513b7144c8b428f6838a3dcc9, type: 3}
+  projectileInstance: {fileID: 6210537255937045933, guid: 6c620d6cfffe149baa77ce37e2a36041, type: 3}
   jr: {fileID: 3214954651038685773, guid: 365bbc70b022d4069885301c3f1da55e, type: 3}
   trail: {fileID: 7153925090116310025, guid: dfd95e3eba22340709e9b36ee0f2b3af, type: 3}
 --- !u!61 &996079869
@@ -1201,6 +1202,7 @@ MonoBehaviour:
   rb: {fileID: 1934101452}
   action: 0
   hitboxInstance: {fileID: 611896959018789032, guid: 9dc1651513b7144c8b428f6838a3dcc9, type: 3}
+  projectileInstance: {fileID: 0}
   jr: {fileID: 0}
   trail: {fileID: 7153925090116310025, guid: dfd95e3eba22340709e9b36ee0f2b3af, type: 3}
 --- !u!61 &1934101450

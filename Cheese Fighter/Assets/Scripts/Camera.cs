@@ -9,6 +9,7 @@ public class Camera : MonoBehaviour
     void Start()
     {
         allPlayers = FindObjectsOfType<Rat>();
+        this.transform.position = new Vector3(0f, 0f, -10f);
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class Camera : MonoBehaviour
         }
         newPos.x = newPos.x / allPlayers.Length;
         newPos.y = newPos.y / allPlayers.Length;
-        newPos.z = -10f - (maxDist * 2);
+        newPos.z = -10f - (maxDist * 3);
         this.transform.position = newPos;
     }
 }

@@ -202,6 +202,10 @@ public class Rat : MonoBehaviour
                     3 * dir, 1, 5, 
                     2);
         p.setSpeedX(0.1f * dir);
+        if (dir < 0) {
+            p.flip();
+            Debug.Log("flip");
+        }
         for (int i = 0; i < 5; i++)
         {
             yield return Utils.Frames(1);

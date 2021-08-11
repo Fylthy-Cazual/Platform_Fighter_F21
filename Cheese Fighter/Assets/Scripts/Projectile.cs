@@ -9,12 +9,6 @@ public class Projectile : Hitbox
 
     private SpriteRenderer projectileSR;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        projectileSR = GetComponentInChildren<SpriteRenderer>();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -45,6 +39,13 @@ public class Projectile : Hitbox
     public void setSprite(Sprite sprite)
     {
         //change sprite of this projectile
+    }
+
+    public void flip()
+    {
+        SpriteRenderer[] srs = GetComponentsInChildren<SpriteRenderer>();
+        projectileSR = srs[1];
+        projectileSR.flipX = true;
     }
     
 }

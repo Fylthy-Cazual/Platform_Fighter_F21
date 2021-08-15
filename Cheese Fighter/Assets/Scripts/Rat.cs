@@ -21,6 +21,8 @@ public class Rat : MonoBehaviour
     public JumpRing jr;
     public Trail trail;
 
+    public SpriteRenderer sr;
+
     //Experimental stuff
     private bool collidingX;
     private bool collidingY;
@@ -84,6 +86,7 @@ public class Rat : MonoBehaviour
         transform.position = new Vector3(transform.position.x + speed,
                                 transform.position.y,
                                 transform.position.z);
+        sr.flipX = false;
     }
 
     public void left()
@@ -94,6 +97,7 @@ public class Rat : MonoBehaviour
         transform.position = new Vector3(transform.position.x - speed,
                                 transform.position.y,
                                 transform.position.z);
+        sr.flipX = true;
     }
 
     public void startJump()

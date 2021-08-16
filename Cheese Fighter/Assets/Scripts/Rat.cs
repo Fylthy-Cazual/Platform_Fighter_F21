@@ -92,7 +92,7 @@ public class Rat : MonoBehaviour
     public void left()
     {
         dir = -1;
-        animator.SetFloat("Speed", -1f);
+        animator.SetFloat("Speed", 1f);
         animator.SetFloat("Dir", -1f);
         transform.position = new Vector3(transform.position.x - speed,
                                 transform.position.y,

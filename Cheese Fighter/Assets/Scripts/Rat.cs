@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
+    public string name;
+    
     public float hp;
     public float speed;
     public float weight;

@@ -1249,7 +1249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Dummy
-  hp: 0
+  hp: 100
   speed: 0
   weight: 1
   jumps: 0

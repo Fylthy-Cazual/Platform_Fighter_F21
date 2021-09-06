@@ -301,9 +301,17 @@ public class Rat : MonoBehaviour
         {
             // Trail newTrail = Instantiate(trail);
             // newTrail.transform.position = transform.position;
-            transform.position = new Vector3(transform.position.x + (x * factor/100),
+            Vector3 newPos = new Vector3(transform.position.x + (x * factor/100),
                                             transform.position.y + (y * factor/100),
                                             0f);
+            if (Physics.Linecast(transform.position, newPos))
+            {
+                break;
+            }
+            else
+            {
+                this.transform.position = newPos;
+            }
             yield return Utils.Frames(1);
             if (collidingX && i > 1)
             {

@@ -18,17 +18,23 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
         allPlayers = FindObjectsOfType<Rat>();
-        if (allPlayers[0] != null) {
+        
+        if (allPlayers[0] != null) {    
             player1 = allPlayers[0];
+            player1.playerNum = 0;
         }
         if (allPlayers[1] != null) {
             player2 = allPlayers[1];
+            player2.playerNum = 1;
         }
         if (allPlayers[2] != null) {
             player3 = allPlayers[2];
+            player3.playerNum = 2;
         }
         if (allPlayers[3] != null) {
             player4 = allPlayers[3];
+            player4.playerNum = 3;
+
         }
 
         hpStyle.fontSize = 80;

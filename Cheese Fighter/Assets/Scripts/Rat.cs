@@ -13,6 +13,8 @@ public class Rat : MonoBehaviour
     public int maxJumps;
     public int dir = 1;
 
+    public int playerNum;
+
     public Animator animator;
 
     public Rigidbody2D rb;
@@ -49,32 +51,62 @@ public class Rat : MonoBehaviour
     {
         if (!action)
         {
-            if (Input.GetKeyDown(KeyCode.W)) //Jump
-            {
-                startJump();
-            }
+            if (playerNum == 0) {
+                if (Input.GetKeyDown(KeyCode.W)) //Jump
+                {
+                    startJump();
+                }
 
-            if (Input.GetKey(KeyCode.D)) //Move Right
-            {
-                right();
-            }
-            else if (Input.GetKey(KeyCode.A)) //Move Left
-            {
-                left();
-            }
-            else //No horizontal movement
-            {
-                animator.SetFloat("Speed", 0f);
-            }
+                if (Input.GetKey(KeyCode.D)) //Move Right
+                {
+                    right();
+                }
+                else if (Input.GetKey(KeyCode.A)) //Move Left
+                {
+                    left();
+                }
+                else //No horizontal movement
+                {
+                    animator.SetFloat("Speed", 0f);
+                }
 
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                jab();
-            }
-            else if (Input.GetKeyDown(KeyCode.K))
-            {
-                special();
-            }
+                if (Input.GetKeyDown(KeyCode.J))
+                {
+                    jab();
+                }
+                else if (Input.GetKeyDown(KeyCode.K))
+                {
+                    special();
+                }
+            } else if (playerNum == 1) {
+                if (Input.GetKeyDown(KeyCode.UpArrow)) //Jump
+                {
+                    startJump();
+                }
+
+                if (Input.GetKey(KeyCode.RightArrow)) //Move Right
+                {
+                    right();
+                }
+                else if (Input.GetKey(KeyCode.LeftArrow)) //Move Left
+                {
+                    left();
+                }
+                else //No horizontal movement
+                {
+                    animator.SetFloat("Speed", 0f);
+                }
+
+                if (Input.GetKeyDown(KeyCode.Comma))
+                {
+                    jab();
+                }
+                else if (Input.GetKeyDown(KeyCode.Period))
+                {
+                    special();
+                }
+
+            }    
         }
     }
 
@@ -388,5 +420,7 @@ public class Rat : MonoBehaviour
         collidingX = false;
         collidingY = false;
     }
+
+
 
 }

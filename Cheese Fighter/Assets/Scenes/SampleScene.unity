@@ -261,6 +261,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6764028396959115472, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6764028396959115473, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
       propertyPath: m_Offset.y
       value: -0.02560679
@@ -272,6 +276,10 @@ PrefabInstance:
     - target: {fileID: 6764028396959115476, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
       propertyPath: m_Name
       value: Cowboy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6764028396959115477, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+      propertyPath: m_FlipX
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6764028396959115477, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
       propertyPath: m_Sprite
@@ -321,7 +329,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6764028396959115472, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
 --- !u!1 &305373138
 GameObject:
@@ -540,6 +549,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!1 &464647133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6764028396959115476, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+  m_PrefabInstance: {fileID: 174204277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &464647138 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6764028396959115477, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+  m_PrefabInstance: {fileID: 174204277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &464647140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464647133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76749d8c31ec644668799af0d4fe26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Cowboy
+  hp: 0
+  speed: 2.5
+  weight: 1
+  jumps: 0
+  maxJumps: 2
+  dir: 1
+  animator: {fileID: 0}
+  rb: {fileID: 0}
+  action: 0
+  hitboxInstance: {fileID: 611896959018789032, guid: 9dc1651513b7144c8b428f6838a3dcc9, type: 3}
+  projectileInstance: {fileID: 6210537255937045933, guid: 6c620d6cfffe149baa77ce37e2a36041, type: 3}
+  jr: {fileID: 3214954651038685773, guid: 365bbc70b022d4069885301c3f1da55e, type: 3}
+  trail: {fileID: 7153925090116310025, guid: dfd95e3eba22340709e9b36ee0f2b3af, type: 3}
+  sr: {fileID: 464647138}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

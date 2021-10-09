@@ -27,7 +27,7 @@ public class Rat : MonoBehaviour
 
     //Experimental stuff
     private bool collidingX;
-    private bool collidingY;
+    protected bool collidingY;
 
     // Start is called before the first frame update
     public void Start()
@@ -155,7 +155,7 @@ public class Rat : MonoBehaviour
         StartCoroutine(specialG());
     }
 
-    IEnumerator jabG() //grounded normalk attack
+    protected virtual IEnumerator jabG() //grounded normalk attack
     {
         action = true;
         animator.SetTrigger("Jab-Ground");
@@ -169,7 +169,7 @@ public class Rat : MonoBehaviour
         animator.SetTrigger("Return");
     }
 
-    IEnumerator jabA() //aerial normal attack
+    protected virtual IEnumerator jabA() //aerial normal attack
     {
         action = true;
         animator.SetTrigger("Jab-Air");
@@ -195,7 +195,7 @@ public class Rat : MonoBehaviour
         animator.SetTrigger("Return");
     }
 
-    IEnumerator specialG() //grounded special attack
+    protected virtual IEnumerator specialG() //grounded special attack
     {
         action = true;
         animator.SetTrigger("Special-Ground");
@@ -220,7 +220,7 @@ public class Rat : MonoBehaviour
         animator.SetTrigger("Return");
     }
 
-    IEnumerator dash()
+    protected virtual IEnumerator dash()
     {
         action = true;
         animator.SetTrigger("Dash"); 

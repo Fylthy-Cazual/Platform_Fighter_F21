@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CowboyIdle
+  m_Name: CowboyBarrelRoll
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,15 +20,15 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1706134236122570850, guid: 100927eeaa7c547a49d956abc51ec643, type: 3}
+      value: {fileID: 1645539028903271015, guid: 44bfa6c9bc77c4a19b70c14ab3a83274, type: 3}
     - time: 0.083333336
-      value: {fileID: -3958157733417864326, guid: 100927eeaa7c547a49d956abc51ec643, type: 3}
+      value: {fileID: 1326821678948059348, guid: 44bfa6c9bc77c4a19b70c14ab3a83274, type: 3}
     - time: 0.16666667
-      value: {fileID: -356959885460357271, guid: 100927eeaa7c547a49d956abc51ec643, type: 3}
+      value: {fileID: -3495543024530542472, guid: 44bfa6c9bc77c4a19b70c14ab3a83274, type: 3}
     - time: 0.25
-      value: {fileID: -4149313012961291020, guid: 100927eeaa7c547a49d956abc51ec643, type: 3}
+      value: {fileID: 8047459437950846435, guid: 44bfa6c9bc77c4a19b70c14ab3a83274, type: 3}
     - time: 0.33333334
-      value: {fileID: 7017208941770196962, guid: 100927eeaa7c547a49d956abc51ec643, type: 3}
+      value: {fileID: 7782613229177286376, guid: 44bfa6c9bc77c4a19b70c14ab3a83274, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,11 +48,11 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1706134236122570850, guid: 100927eeaa7c547a49d956abc51ec643, type: 3}
-    - {fileID: -3958157733417864326, guid: 100927eeaa7c547a49d956abc51ec643, type: 3}
-    - {fileID: -356959885460357271, guid: 100927eeaa7c547a49d956abc51ec643, type: 3}
-    - {fileID: -4149313012961291020, guid: 100927eeaa7c547a49d956abc51ec643, type: 3}
-    - {fileID: 7017208941770196962, guid: 100927eeaa7c547a49d956abc51ec643, type: 3}
+    - {fileID: 1645539028903271015, guid: 44bfa6c9bc77c4a19b70c14ab3a83274, type: 3}
+    - {fileID: 1326821678948059348, guid: 44bfa6c9bc77c4a19b70c14ab3a83274, type: 3}
+    - {fileID: -3495543024530542472, guid: 44bfa6c9bc77c4a19b70c14ab3a83274, type: 3}
+    - {fileID: 8047459437950846435, guid: 44bfa6c9bc77c4a19b70c14ab3a83274, type: 3}
+    - {fileID: 7782613229177286376, guid: 44bfa6c9bc77c4a19b70c14ab3a83274, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

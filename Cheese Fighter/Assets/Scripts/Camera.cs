@@ -20,15 +20,13 @@ public class Camera : MonoBehaviour
         float maxDist = 0f;
         foreach (Rat rat in allPlayers)
         {
-            if (rat != null) {
-                newPos.x = newPos.x + rat.transform.position.x;
-                newPos.y = newPos.y + rat.transform.position.y;
-                float thisDist = Vector3.Distance(rat.transform.position, center);
-                if (thisDist > maxDist) 
-                {
-                    maxDist = thisDist;
-                }
-            }    
+            newPos.x = newPos.x + rat.transform.position.x;
+            newPos.y = newPos.y + rat.transform.position.y;
+            float thisDist = Vector3.Distance(rat.transform.position, center);
+            if (thisDist > maxDist) 
+            {
+                maxDist = thisDist;
+            }
         }
         newPos.x = newPos.x / allPlayers.Length;
         newPos.y = newPos.y / allPlayers.Length;

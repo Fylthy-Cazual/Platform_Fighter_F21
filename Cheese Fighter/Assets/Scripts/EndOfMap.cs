@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +8,7 @@ public class EndOfMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Console.WriteLine("poggers");
+
     }
 
     // Update is called once per frame
@@ -18,9 +18,9 @@ public class EndOfMap : MonoBehaviour
     }
 
     //Called when collider collides with another collider
-    private void OnTriggerEnter(Collider c) {
-        //kill rat somehow idk
+    private void OnTriggerEnter2D(Collider2D c) {
+        //trigger death animation? 
         Destroy(c.gameObject);
-        Console.WriteLine("poggers");
+        Debug.Log(c.name + " triggered me");
     }
 }

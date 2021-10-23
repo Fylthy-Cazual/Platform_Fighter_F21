@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6764028396959115478}
   - component: {fileID: 6764028396959115477}
-  - component: {fileID: 1862007239111365981}
   - component: {fileID: 6764028396959115479}
+  - component: {fileID: 6764028396959115472}
   - component: {fileID: 6764028396959115473}
   - component: {fileID: 6764028396959115474}
   m_Layer: 0
-  m_Name: Cowboy
+  m_Name: TestRat
   m_TagString: p1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,33 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1862007239111365981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6764028396959115476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76749d8c31ec644668799af0d4fe26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Cowboy
-  hp: 100
-  speed: 5
-  weight: 5
-  jumps: 3
-  maxJumps: 3
-  dir: 1
-  animator: {fileID: 6764028396959115474}
-  rb: {fileID: 6764028396959115479}
-  action: 0
-  hitboxInstance: {fileID: 611896959018789032, guid: 9dc1651513b7144c8b428f6838a3dcc9, type: 3}
-  projectileInstance: {fileID: 6210537255937045933, guid: 6c620d6cfffe149baa77ce37e2a36041, type: 3}
-  jr: {fileID: 3214954651038685773, guid: 365bbc70b022d4069885301c3f1da55e, type: 3}
-  trail: {fileID: 7153925090116310025, guid: dfd95e3eba22340709e9b36ee0f2b3af, type: 3}
-  sr: {fileID: 6764028396959115477}
 --- !u!50 &6764028396959115479
 Rigidbody2D:
   serializedVersion: 4
@@ -134,6 +107,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &6764028396959115472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6764028396959115476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9729cfb71548449cf85c47111f939ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Common Fat Rat
+  hp: 0
+  speed: 2.5
+  weight: 1
+  jumps: 0
+  maxJumps: 2
+  dir: 1
+  animator: {fileID: 0}
+  rb: {fileID: 0}
+  action: 0
+  hitboxInstance: {fileID: 611896959018789032, guid: 9dc1651513b7144c8b428f6838a3dcc9, type: 3}
+  projectileInstance: {fileID: 6210537255937045933, guid: 6c620d6cfffe149baa77ce37e2a36041, type: 3}
+  jr: {fileID: 3214954651038685773, guid: 365bbc70b022d4069885301c3f1da55e, type: 3}
+  trail: {fileID: 7153925090116310025, guid: dfd95e3eba22340709e9b36ee0f2b3af, type: 3}
+  sr: {fileID: 6764028396959115477}
 --- !u!61 &6764028396959115473
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ Animator:
   m_GameObject: {fileID: 6764028396959115476}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eca0c1f3ee8254dffb08d9dfe774abf1, type: 2}
+  m_Controller: {fileID: 9100000, guid: d5f2b278f43774d0384fbc6d069b2097, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

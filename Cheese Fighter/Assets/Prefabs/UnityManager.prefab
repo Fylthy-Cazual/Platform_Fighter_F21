@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a780f7ce6c2d49e48da49f0c5acf3b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapWidth: 35
+  mapHeight: 25
   ProductionLoadedManagers:
   - {fileID: 11400000, guid: 65d9607c98aac48f7ba9b4e14e274ed7, type: 2}
   - {fileID: 11400000, guid: d352e32d794ad451090e58b5bdd71dcd, type: 2}

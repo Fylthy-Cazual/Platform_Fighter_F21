@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e222cc861a74dce8d27cbd7b34e084, type: 3}
   m_Name: GameplayManager
   m_EditorClassIdentifier: 
-  automatedSetup: 1
+  playModeAutomatedSetup: 1
   allPlayers:
   - {fileID: 0}
   - {fileID: 0}

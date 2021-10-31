@@ -57,6 +57,8 @@ public class Rat : MonoBehaviour
         action = false;
         collidingX = false;
         collidingY = false;
+        animator.SetFloat(Speed, 0f);
+        animator.SetFloat(Dir, 1f);
     }
 
     // Update is called once per frame

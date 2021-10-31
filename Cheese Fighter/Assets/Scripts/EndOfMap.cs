@@ -8,7 +8,6 @@ public class EndOfMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Console.WriteLine("poggers");
     }
 
     // Update is called once per frame
@@ -18,9 +17,8 @@ public class EndOfMap : MonoBehaviour
     }
 
     //Called when collider collides with another collider
-    private void OnTriggerEnter(Collider c) {
-        //kill rat somehow idk
-        Destroy(c.gameObject);
-        Console.WriteLine("poggers");
+    private void OnTriggerEnter2D(Collider2D c) {
+        Rat rat = c.gameObject.GetComponent<Rat>();
+        rat.die();
     }
 }

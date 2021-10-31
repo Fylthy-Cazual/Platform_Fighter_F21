@@ -13,7 +13,12 @@ public class Rat : MonoBehaviour
     public int maxJumps;
     public int dir = 1;
 
+    public int lives = 3;
+
     public int playerNum;
+    Vector3[] respawnPos;
+    //Text playerLabel;
+    Transform mTextOverTransform;
 
     public Animator animator;
 
@@ -34,6 +39,8 @@ public class Rat : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        //playerLabel.text = "Player " + (String)playerNum;
+        //playerLabel.transform = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         speed = speed / 50f;
         jumps = maxJumps;
 
@@ -44,6 +51,7 @@ public class Rat : MonoBehaviour
 
         collidingX = false;
         collidingY = false;
+        respawnPos = new Vector3[]{new Vector3((float)-2.5,(float)3), new Vector3((float)-0.5,(float)3), new Vector3((float)1.5,(float)3), new Vector3((float)3.5,(float)3)};
     }
 
     // Update is called once per frame
@@ -110,6 +118,14 @@ public class Rat : MonoBehaviour
         }
     }
 
+    public void die() {
+        lives -= 1;
+        transform.position = respawnPos[playerNum];
+        if (lives == 0) {
+            //game over.
+        }
+    }
+
     #region movement
 
     public void right()
@@ -120,6 +136,7 @@ public class Rat : MonoBehaviour
         transform.position = new Vector3(transform.position.x + speed,
                                 transform.position.y,
                                 transform.position.z);
+        //playerLabel.transform = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);                      
         sr.flipX = false;
     }
 
@@ -131,6 +148,7 @@ public class Rat : MonoBehaviour
         transform.position = new Vector3(transform.position.x - speed,
                                 transform.position.y,
                                 transform.position.z);
+        //playerLabel.transform = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         sr.flipX = true;
     }
 
@@ -153,6 +171,7 @@ public class Rat : MonoBehaviour
             transform.position = new Vector3(transform.position.x,
                                             transform.position.y + ((30f - i)/200),
                                             transform.position.z);
+            //playerLabel.transform = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
             rb.velocity = new Vector3(0f, 0f, 0f);
             yield return Utils.Frames(1);
         }
@@ -220,6 +239,7 @@ public class Rat : MonoBehaviour
             transform.position = new Vector3(transform.position.x + (0.1f * dir),
                                             transform.position.y - 0.05f,
                                             0f);
+            //playerLabel.transform = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);                    
             yield return Utils.Frames(1);
         }
         yield return Utils.Frames(4);
@@ -261,6 +281,7 @@ public class Rat : MonoBehaviour
             transform.position = new Vector3(transform.position.x + (0.04f * dir),
                                 transform.position.y,
                                 transform.position.z);
+            //playerLabel.transform = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);                    
             yield return Utils.Frames(1);
         }
         makeHitbox(0, 0, 4f,
@@ -272,6 +293,7 @@ public class Rat : MonoBehaviour
             transform.position = new Vector3(transform.position.x + (0.1f * dir),
                                 transform.position.y,
                                 transform.position.z);
+            //playerLabel.transform = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);                    
             yield return Utils.Frames(1);
         }
         yield return Utils.Frames(14);
@@ -420,6 +442,8 @@ public class Rat : MonoBehaviour
         collidingX = false;
         collidingY = false;
     }
+
+
 
 
 

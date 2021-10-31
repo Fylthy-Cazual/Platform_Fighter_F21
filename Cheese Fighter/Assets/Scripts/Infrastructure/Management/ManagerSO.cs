@@ -37,14 +37,14 @@ public abstract class ManagerSO : ScriptableObject, IManager
     {
         if (playModeAutomatedSetup)
         {
-            IManager.Set.Managers.Add(this);
+            ManagerSet.Managers.Add(this);
         }
     }
     private void OnDisable()
     {
         if (playModeAutomatedSetup)
         {
-            IManager.Set.Managers.Remove(this);
+            ManagerSet.Managers.Remove(this);
         }
     }
     #endregion

@@ -20,7 +20,7 @@ public interface IManager
 
     // -------------------------------------------------------------------------- INITIALIZATION
     #region INITIALIZATION
-    public void Initialize();
+    void Initialize();
     #endregion
 
     // -------------------------------------------------------------------------- METHODS AND ROUTINES
@@ -29,7 +29,7 @@ public interface IManager
 
     // -------------------------------------------------------------------------- UNITY EVENT FUNCTIONS
     #region UNITY EVENT FUNCTIONS
-    public void Update();
+    void Update();
     #endregion
 
     // -------------------------------------------------------------------------- CASTING
@@ -38,13 +38,14 @@ public interface IManager
 
     // -------------------------------------------------------------------------- HELPER CLASSES
     #region HELPER CLASSES
-    /** The Public Static Readonly Set Of IManagers */
-    public class Set
-    {
-        #region STATIC MEMBERS
-        public static readonly HashSet<IManager> Managers = new HashSet<IManager>();
-        #endregion
-    }
+    #endregion
+}
+
+/** The Public Static Readonly Set Of IManagers */
+public class ManagerSet
+{
+    #region STATIC MEMBERS
+    public static readonly HashSet<IManager> Managers = new HashSet<IManager>();
     #endregion
 }
 

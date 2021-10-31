@@ -27,8 +27,8 @@ public class UnityManager : MonoBehaviour, IManager
     public void Initialize()
     {
         Instance = this;
-        IManager.Set.Managers.UnionWith(ProductionLoadedManagers);
-        foreach (IManager manager in IManager.Set.Managers)
+        ManagerSet.Managers.UnionWith(ProductionLoadedManagers);
+        foreach (IManager manager in ManagerSet.Managers)
         {
             manager.Initialize();
         }
@@ -51,7 +51,7 @@ public class UnityManager : MonoBehaviour, IManager
     }
     public void Update()
     {
-        foreach (IManager manager in IManager.Set.Managers)
+        foreach (IManager manager in ManagerSet.Managers)
         {
             manager.Update();
         }

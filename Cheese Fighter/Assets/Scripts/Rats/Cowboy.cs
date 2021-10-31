@@ -4,27 +4,40 @@ using UnityEngine;
 public class Cowboy : Rat
 {
     
+    // -------------------------------------------------------------------------- STATIC MEMBERS
+    #region STATIC MEMBERS
+    #endregion
+
+    // -------------------------------------------------------------------------- SERIALIZABLE INSPECTOR
+    #region SERIALIZABLE INSPECTOR
+    #endregion
+
+    // -------------------------------------------------------------------------- INSTANCE PROPERTIES
+    #region INSTANCE PROPERTIES
+    #endregion
+
+    // -------------------------------------------------------------------------- GETTERS AND SETTERS
+    #region GETTERS AND SETTERS
+    #endregion
+
+    // -------------------------------------------------------------------------- INITIALIZATION
+    #region INITIALIZATION
+    #endregion
+
+    // -------------------------------------------------------------------------- METHODS AND ROUTINES
+    #region METHODS AND ROUTINES
     protected override IEnumerator jabG() //grounded normal attack
     {
         action = true;
         animator.SetTrigger(Jab_Ground);
-        for (int i = 0; i < 25; i++)
-        {
-            yield return Utils.Frames(1);
-        }
+        yield return Utils.Frames(25);
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
             5f, 15, 10, 
             3 * dir, 1, 5, 
             2);
         p.setSpeedX(0.1f * dir);
-        if (dir < 0) {
-            p.flip();
-            Debug.Log("flip");
-        }
-        for (int i = 0; i < 5; i++)
-        {
-            yield return Utils.Frames(1);
-        }
+        if (dir < 0) p.flip();
+        yield return Utils.Frames(10);
         action = false;
         animator.SetTrigger(Return);
     }
@@ -71,7 +84,7 @@ public class Cowboy : Rat
         
         animator.SetTrigger(Return);
 
-        yield return Utils.Frames(30);
+        yield return Utils.Frames(10);
         action = false;
     }
 
@@ -109,7 +122,7 @@ public class Cowboy : Rat
             myTransform.position = myPosition;
             yield return Utils.Frames(1);
         }
-        yield return Utils.Frames(14);
+        yield return Utils.Frames(3);
         action = false;
         animator.SetTrigger(Return);
     }
@@ -148,8 +161,22 @@ public class Cowboy : Rat
             myTransform.position = myPosition;
             yield return Utils.Frames(1);
         }
-        yield return Utils.Frames(14);
+        yield return Utils.Frames(10);
         action = false;
         animator.SetTrigger(Return);
     }
+    #endregion
+
+    // -------------------------------------------------------------------------- UNITY EVENT FUNCTIONS
+    #region UNITY EVENT FUNCTIONS
+    #endregion
+
+    // -------------------------------------------------------------------------- CASTING
+    #region CASTING
+    #endregion
+
+    // -------------------------------------------------------------------------- HELPER CLASSES
+    #region HELPER CLASSES
+    #endregion
+    
 }

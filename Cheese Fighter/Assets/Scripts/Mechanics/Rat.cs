@@ -312,7 +312,7 @@ public class Rat : MonoBehaviour
             }
             else
             {
-                this.transform.position = newPos;
+                transform.position = newPos;
             }
             yield return Utils.Frames(1);
         }

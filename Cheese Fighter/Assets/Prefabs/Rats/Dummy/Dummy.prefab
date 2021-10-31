@@ -149,17 +149,17 @@ MonoBehaviour:
   hp: 100
   speed: 0
   weight: 1
-  jumps: 0
   maxJumps: 0
   dir: 1
+  sr: {fileID: 6145764293405603487}
+  hitboxInstance: {fileID: 611896959018789032, guid: 9dc1651513b7144c8b428f6838a3dcc9, type: 3}
+  projectileInstance: {fileID: 0}
+  jr: {fileID: 3214954651038685773, guid: 365bbc70b022d4069885301c3f1da55e, type: 3}
+  trail: {fileID: 7153925090116310025, guid: dfd95e3eba22340709e9b36ee0f2b3af, type: 3}
+  jumps: 0
   animator: {fileID: 6145764293405603481}
   rb: {fileID: 6145764293405603486}
   action: 0
-  hitboxInstance: {fileID: 611896959018789032, guid: 9dc1651513b7144c8b428f6838a3dcc9, type: 3}
-  projectileInstance: {fileID: 0}
-  jr: {fileID: 0}
-  trail: {fileID: 7153925090116310025, guid: dfd95e3eba22340709e9b36ee0f2b3af, type: 3}
-  sr: {fileID: 0}
 --- !u!95 &6145764293405603481
 Animator:
   serializedVersion: 3
@@ -168,7 +168,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6145764293405603482}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0

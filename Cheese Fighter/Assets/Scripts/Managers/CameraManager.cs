@@ -41,8 +41,8 @@ public class CameraManager : ManagerSO<CameraManager>
         for (int i = 3; i < allPlayers.Length + 1; i += 1)
         {
             Vector2 ratPosition = allPlayers[i - 1].transform.position;
-            avgPos = avgPos * i / (i - 1) + ratPosition / i;
-            avgVar = avgVar * i / (i - 1) + (ratPosition - avgPos).magnitude / i;
+            avgPos = avgPos * (i - 1) / i + ratPosition / i;
+            avgVar = avgVar * (i - 1) / i + (ratPosition - avgPos).magnitude / i;
         }
         camera.transform.position = new Vector3(avgPos.x, avgPos.y, -10f);
         camera.orthographicSize = Mathf.Clamp(ORTHOGRAPHIC_SCALE * avgVar,

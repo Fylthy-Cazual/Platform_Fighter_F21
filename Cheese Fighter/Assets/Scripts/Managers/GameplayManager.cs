@@ -31,6 +31,16 @@ public class GameplayManager : ManagerSO<GameplayManager>
 
     // -------------------------------------------------------------------------- METHODS AND ROUTINES
     #region METHODS AND ROUTINES
+    public void SetMapBounds(int mapWidth, int mapHeight)
+    {
+        GameObject mapBounds = new GameObject("MapBounds", typeof(BoxCollider2D), typeof(Rigidbody2D), typeof(EndOfMap));
+        mapBounds.transform.position = Vector3.zero;
+        BoxCollider2D boundsCollider = mapBounds.GetComponent<BoxCollider2D>();
+        boundsCollider.isTrigger = true;
+        boundsCollider.size = new Vector2(mapWidth, mapHeight);
+        Rigidbody2D boundsBody = mapBounds.GetComponent<Rigidbody2D>();
+        boundsBody.bodyType = RigidbodyType2D.Static;
+    }
     #endregion
 
     // -------------------------------------------------------------------------- UNITY EVENT FUNCTIONS

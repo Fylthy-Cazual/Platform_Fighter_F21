@@ -33,6 +33,10 @@ public class Rat : MonoBehaviour
     
     #region Serializable References
     public SpriteRenderer sr;
+    public int lives = 3;
+    public int playerNum;
+    public Vector3[] respawnPos;
+    //Transform mTextOverTransform >>>>>>> origin/arik_and_adith:Cheese Fighter/Assets/Scripts/Rat.cs
     public Hitbox hitboxInstance;
     public Projectile projectileInstance;
     public JumpRing jr;
@@ -61,10 +65,17 @@ public class Rat : MonoBehaviour
         animator.SetFloat(Speed, 0f);
         animator.SetFloat(Dir, 1f);
         TextMesh textMesh = UIManager.Instance.AttachText(transform, Vector2.up * 1);
-        textMesh.text = tag;
+        textMesh.text = "Player " + playerNum;
         textMesh.anchor = TextAnchor.MiddleCenter;
         textMesh.alignment = TextAlignment.Center;
         textMesh.characterSize = 0.5f;
+        respawnPos = new []
+        {
+            new Vector3((float)-2.5,3), 
+            new Vector3((float)-0.5,3), 
+            new Vector3((float)1.5,3), 
+            new Vector3((float)3.5,3)
+        };
     }
 
     // Update is called once per frame
@@ -72,32 +83,71 @@ public class Rat : MonoBehaviour
     {
         if (!action)
         {
-            if (Input.GetKeyDown(KeyCode.W)) //Jump
-            {
-                startJump();
-            }
+            if (playerNum == 0) {
+                if (Input.GetKeyDown(KeyCode.W)) //Jump
+                {
+                    startJump();
+                }
 
-            if (Input.GetKey(KeyCode.D)) //Move Right
-            {
-                right();
-            }
-            else if (Input.GetKey(KeyCode.A)) //Move Left
-            {
-                left();
-            }
-            else //No horizontal movement
-            {
-                animator.SetFloat(Speed, 0f);
-            }
+                if (Input.GetKey(KeyCode.D)) //Move Right
+                {
+                    right();
+                }
+                else if (Input.GetKey(KeyCode.A)) //Move Left
+                {
+                    left();
+                }
+                else //No horizontal movement
+                {
+                    animator.SetFloat("Speed", 0f);
+                }
 
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                jab();
-            }
-            else if (Input.GetKeyDown(KeyCode.K))
-            {
-                special();
-            }
+                if (Input.GetKeyDown(KeyCode.J))
+                {
+                    jab();
+                }
+                else if (Input.GetKeyDown(KeyCode.K))
+                {
+                    special();
+                }
+            } else if (playerNum == 1) {
+                if (Input.GetKeyDown(KeyCode.UpArrow)) //Jump
+                {
+                    startJump();
+                }
+
+                if (Input.GetKey(KeyCode.RightArrow)) //Move Right
+                {
+                    right();
+                }
+                else if (Input.GetKey(KeyCode.LeftArrow)) //Move Left
+                {
+                    left();
+                }
+                else //No horizontal movement
+                {
+                    animator.SetFloat("Speed", 0f);
+                }
+
+                if (Input.GetKeyDown(KeyCode.Comma))
+                {
+                    jab();
+                }
+                else if (Input.GetKeyDown(KeyCode.Period))
+                {
+                    special();
+                }
+
+            }    
+        }
+    }
+
+    public void die() {
+        lives -= 1;
+        transform.position = respawnPos[playerNum];
+        rb.velocity = Vector2.zero;
+        if (lives == 0) {
+            //game over.
         }
     }
 
@@ -386,5 +436,4 @@ public class Rat : MonoBehaviour
         collidingX = false;
         collidingY = false;
     }
-
 }

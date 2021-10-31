@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Rat : MonoBehaviour
@@ -59,6 +60,11 @@ public class Rat : MonoBehaviour
         collidingY = false;
         animator.SetFloat(Speed, 0f);
         animator.SetFloat(Dir, 1f);
+        TextMesh textMesh = UIManager.Instance.AttachText(transform, Vector2.up * 1);
+        textMesh.text = tag;
+        textMesh.anchor = TextAnchor.MiddleCenter;
+        textMesh.alignment = TextAlignment.Center;
+        textMesh.characterSize = 0.5f;
     }
 
     // Update is called once per frame

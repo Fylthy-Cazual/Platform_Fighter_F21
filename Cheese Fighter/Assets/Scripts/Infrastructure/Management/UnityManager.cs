@@ -49,7 +49,6 @@ public class UnityManager : MonoBehaviour, IManager
     {
         Initialize();
     }
-
     public void Update()
     {
         foreach (IManager manager in IManager.Set.Managers)

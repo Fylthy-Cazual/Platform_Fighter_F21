@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d675d31e5e4349a5a4a72aac1141c1, type: 3}
   m_Name: UIManager
   m_EditorClassIdentifier: 
-  automatedSetup: 1
-  BattleUI: {fileID: 8856521177475956936, guid: 3c88fc85782a74f328d083b3e6afb5f7, type: 3}
+  playModeAutomatedSetup: 1
+  BattleUIPrefab: {fileID: 8856521177475956936, guid: 3c88fc85782a74f328d083b3e6afb5f7, type: 3}

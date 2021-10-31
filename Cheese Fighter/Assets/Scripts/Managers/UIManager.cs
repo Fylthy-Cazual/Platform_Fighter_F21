@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "UIManager", menuName = "Managers/UIManager")]
 public class UIManager : ManagerSO<UIManager>
@@ -10,7 +11,7 @@ public class UIManager : ManagerSO<UIManager>
 
     // -------------------------------------------------------------------------- SERIALIZABLE INSPECTOR
     #region SERIALIZABLE INSPECTOR
-    public GameObject BattleUI;
+    public GameObject BattleUIPrefab;
     #endregion
 
     // -------------------------------------------------------------------------- INSTANCE PROPERTIES
@@ -27,13 +28,25 @@ public class UIManager : ManagerSO<UIManager>
 
     public override void Initialize()
     {
+        Instance = this;
         hpStyle.fontSize = 80;
-        UnityManager.Instance.InstantiatePrefab(BattleUI);
+        UnityManager.Instance.InstantiatePrefab(BattleUIPrefab);
     }
     #endregion
 
     // -------------------------------------------------------------------------- METHODS AND ROUTINES
     #region METHODS AND ROUTINES
+    public TextMesh AttachText(Transform parent, Vector2 offset)
+    {
+        return new GameObject("uiText", typeof(TextMesh))
+        {
+            transform =
+            {
+                parent = parent,
+                localPosition = offset
+            }
+        }.GetComponent<TextMesh>();
+    }
     #endregion
 
     // -------------------------------------------------------------------------- UNITY EVENT FUNCTIONS

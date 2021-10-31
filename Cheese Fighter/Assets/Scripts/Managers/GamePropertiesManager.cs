@@ -24,6 +24,7 @@ public class GamePropertiesManager : ManagerSO<GamePropertiesManager>
     #region INITIALIZATION
     public override void Initialize()
     {
+        Instance = this;
         Application.targetFrameRate = targetFrameRate;
     }
     #endregion

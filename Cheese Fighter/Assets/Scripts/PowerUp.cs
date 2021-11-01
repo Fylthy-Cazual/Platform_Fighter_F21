@@ -5,6 +5,7 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
 
+    //This script exists!
     [SerializeField] private float time; 
     [SerializeField] private bool picked_up;
     private Rat user;

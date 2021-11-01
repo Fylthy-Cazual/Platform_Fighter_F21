@@ -45,42 +45,43 @@ public class PowerUp : MonoBehaviour
 
     void PowerUpMethod()
     {
-        if(this.name == "JumpBuff"){
-            user.maxJumps+=1;
-        }
-
-        // if(this.name == "DamageBuff"){
-        //     dmgMultiplier = dmgMultiplier * 2;
-        // }
-
-        if(this.name == "InvisibleBuff"){
-            user.GetComponent<SpriteRenderer>().enabled = false;
-        }
-
-        if(this.name == "SpeedBuff")
+        switch(this.name)
         {
-            user.speed = user.speed * 1.5f;
+        case "JumpBuff":
+            user.maxJumps += 1;
+            break;
+        case "DamageBuff":
+            //dmgMultiplier = dmgMultiplier * 2;
+            break;
+        case "InvisibleBuff":
+            user.GetComponent<SpriteRenderer>().enabled = false;
+            break;
+        case "SpeedBuff":
+            user.speed *= 1.5f;
+            break;
+        default:
+            break;
         }
     }
 
     void PowerDown()
     {
-        if(this.name == "JumpBuff"){
-
-            user.maxJumps-=1;
-        }
-
-        // if(this.name == "DamageBuff"){
-        //     dmgMultiplier = dmgMultiplier / 2;
-        // }
-
-        if(this.name == "InvisibleBuff"){
-            user.GetComponent<SpriteRenderer>().enabled = true;
-        }
-
-        if(this.name == "SpeedBuff")
+        switch(this.name)
         {
-            user.speed = user.speed / 1.5f;
+        case "JumpBuff":
+            user.maxJumps -= 1;
+            break;
+        case "DamageBuff":
+            //dmgMultiplier /= 2;
+            break;
+        case "InvisibleBuff":
+            user.GetComponent<SpriteRenderer>().enabled = true;
+            break;
+        case "SpeedBuff":
+            user.speed /= 1.5f;
+            break;
+        default:
+            break;
         }
     }
 }

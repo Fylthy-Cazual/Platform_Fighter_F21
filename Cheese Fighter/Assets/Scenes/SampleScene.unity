@@ -890,7 +890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7795037bb865d4513adaae133dc4cc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 6e+11
+  time: 6000
   picked_up: 0
 --- !u!1 &669664024
 GameObject:
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7795037bb865d4513adaae133dc4cc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 6e+11
+  time: 6000
   picked_up: 0
 --- !u!4 &669664028
 Transform:
@@ -1366,7 +1366,7 @@ GameObject:
   - component: {fileID: 1806418334}
   - component: {fileID: 1806418333}
   m_Layer: 0
-  m_Name: DamageBuff
+  m_Name: InvisibleBuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7795037bb865d4513adaae133dc4cc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 6e+11
+  time: 6000
   picked_up: 0
 --- !u!4 &1806418336
 Transform:

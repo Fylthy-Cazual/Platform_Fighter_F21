@@ -45,11 +45,42 @@ public class PowerUp : MonoBehaviour
 
     void PowerUpMethod()
     {
-        user.maxJumps+=1;
+        if(this.name == "JumpBuff"){
+            user.maxJumps+=1;
+        }
+
+        // if(this.name == "DamageBuff"){
+        //     dmgMultiplier = dmgMultiplier * 2;
+        // }
+
+        if(this.name == "InvisibleBuff"){
+            user.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        if(this.name == "SpeedBuff")
+        {
+            user.speed = user.speed * 1.5f;
+        }
     }
 
     void PowerDown()
     {
-        user.maxJumps-=1;
+        if(this.name == "JumpBuff"){
+
+            user.maxJumps-=1;
+        }
+
+        // if(this.name == "DamageBuff"){
+        //     dmgMultiplier = dmgMultiplier / 2;
+        // }
+
+        if(this.name == "InvisibleBuff"){
+            user.GetComponent<SpriteRenderer>().enabled = true;
+        }
+
+        if(this.name == "SpeedBuff")
+        {
+            user.speed = user.speed / 1.5f;
+        }
     }
 }

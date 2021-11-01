@@ -12,6 +12,7 @@ public class Rat : MonoBehaviour
     public int jumps;
     public int maxJumps;
     public int dir = 1;
+    public float dmgMultiplier = 1.0f;
 
     public Animator animator;
 

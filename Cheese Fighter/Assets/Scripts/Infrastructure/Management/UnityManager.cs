@@ -51,6 +51,7 @@ public class UnityManager : MonoBehaviour, IManager
     public void Awake()
     {
         Initialize();
+        DontDestroyOnLoad(this.gameObject);
     }
     public void Update()
     {

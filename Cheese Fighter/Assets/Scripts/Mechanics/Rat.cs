@@ -52,6 +52,8 @@ public class Rat : MonoBehaviour
     protected bool collidingY;
     #endregion
 
+    private UnityManager UM;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -76,6 +78,7 @@ public class Rat : MonoBehaviour
             new Vector3((float)1.5,3), 
             new Vector3((float)3.5,3)
         };
+        UM = GameObject.Find("UnityManager").GetComponent<UnityManager>();
     }
 
     // Update is called once per frame
@@ -142,14 +145,16 @@ public class Rat : MonoBehaviour
         }
     }
 
-    public void die() {
+    public void die() 
+    {
         lives -= 1;
         transform.position = respawnPos[playerNum];
         rb.velocity = Vector2.zero;
         hp = 100; // TODO, make generic
         StopAllCoroutines();
-        if (lives == 0) {
-            //game over.
+        if (lives == 0) 
+        {
+            //UM.GetComponent<GameplayManager>().DecideVictor();
         }
     }
 

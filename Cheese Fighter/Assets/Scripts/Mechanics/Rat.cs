@@ -146,6 +146,8 @@ public class Rat : MonoBehaviour
         lives -= 1;
         transform.position = respawnPos[playerNum];
         rb.velocity = Vector2.zero;
+        hp = 100; // TODO, make generic
+        StopAllCoroutines();
         if (lives == 0) {
             //game over.
         }
@@ -360,11 +362,11 @@ public class Rat : MonoBehaviour
             Vector3 newPos = new Vector3(transform.position.x + (x * factor/100),
                 transform.position.y + (y * factor/100),
                 0f);
-            if (Physics2D.Linecast(transform.position, newPos, LayerMask.GetMask("Platform")))
+            if (Physics2D.Linecast(transform.position, newPos, LayerMask.GetMask("Wall")))
             {
                 x *= -1;
             }
-            else if (Physics2D.Linecast(transform.position, newPos, LayerMask.GetMask("Wall")))
+            else if (Physics2D.Linecast(transform.position, newPos, LayerMask.GetMask("Platform")))
             {
                 y *= -1;
             }

@@ -50,6 +50,7 @@ public class Rat : MonoBehaviour
     [HideInInspector] public bool action; //True if Player is performing an action, False otherwise.
     protected bool collidingX;
     protected bool collidingY;
+    protected TextMesh textMesh;
     #endregion
 
     // Start is called before the first frame update
@@ -64,7 +65,7 @@ public class Rat : MonoBehaviour
         collidingY = false;
         animator.SetFloat(Speed, 0f);
         animator.SetFloat(Dir, 1f);
-        TextMesh textMesh = UIManager.Instance.AttachText(transform, Vector2.up * 1);
+        textMesh = UIManager.Instance.AttachText(transform, Vector2.up * 1);
         textMesh.text = "Player " + playerNum;
         textMesh.anchor = TextAnchor.MiddleCenter;
         textMesh.alignment = TextAlignment.Center;
@@ -81,6 +82,7 @@ public class Rat : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        textMesh.text = "Player " + playerNum + " " + hp + "%";
         if (!action)
         {
             if (playerNum == 0) {

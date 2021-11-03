@@ -43,7 +43,7 @@ public class MoveablePlatform : MonoBehaviour
             }
             //if position is in the left side
                 //move to the right
-            //elif position is in the right or middle
+            //else if position is in the right or middle
                 //move to the left
             //reset time to the time it was before
             //move either left to right or right to left

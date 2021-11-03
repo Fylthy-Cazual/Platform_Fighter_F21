@@ -287,11 +287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.78
+      value: -2.75
       objectReference: {fileID: 0}
     - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -356,12 +356,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e222cc861a74dce8d27cbd7b34e084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playModeAutomatedSetup: 1
   allPlayers: []
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
-  statusDisplay: {fileID: 305373140}
 --- !u!224 &305373140
 RectTransform:
   m_ObjectHideFlags: 0
@@ -571,6 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c9ebe373baa4a28965f08e2baf42a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   Time: 100.6
 --- !u!1 &519420028
 GameObject:
@@ -611,7 +608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa3cae0a2a624440954f4f2242ce51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allPlayers: []
+  playModeAutomatedSetup: 1
+  camera: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1123,6 +1121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555809dc9aba74405a3d608653f87aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playModeAutomatedSetup: 1
+  targetFrameRate: 60
 --- !u!4 &1681242508
 Transform:
   m_ObjectHideFlags: 0

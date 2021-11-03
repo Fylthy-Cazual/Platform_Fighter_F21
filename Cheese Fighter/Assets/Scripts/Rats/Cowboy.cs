@@ -33,7 +33,7 @@ public class Cowboy : Rat
         yield return Utils.Frames(25);
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
             5f, 15, 10, 
-            3 * dir, 1, 5, 
+            1.5f * dir, 0.5f, 5, 
             2);
         p.setSpeedX(0.1f * dir);
         if (dir < 0) p.flip();
@@ -110,7 +110,7 @@ public class Cowboy : Rat
         }
         makeHitbox(0, 0, 4f,
             3f, dashDuration, 60,
-            5 * dir, 8, 40,
+            2f * dir, 3.2f, 40,
             5);
         for (int i = 0; i < dashDuration; i++)
         {
@@ -149,7 +149,7 @@ public class Cowboy : Rat
         }
         makeHitbox(0, 0, 4f,
                     3f, dashDuration, 40,
-                    5 * dir, 8, 20,
+                    1f * dir, 1.6f, 20,
                     5);
         for (int i = 0; i < dashDuration; i++)
         {

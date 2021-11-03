@@ -10,6 +10,7 @@ public class MoveablePlatform : MonoBehaviour
     private float Time;
     private bool isMoving = false;
     private float reset;
+    [SerializeField]
     private float movementSpeed = 5f;
     //positon and velocity in vector 3
     //velocity == vector 3 going 
@@ -22,7 +23,7 @@ public class MoveablePlatform : MonoBehaviour
         //set timer variable to perfect time
         //secs var set up
         reset = Time;
-        
+        Time = 0f;
     }
 
     // Update is called once per frame
@@ -33,13 +34,13 @@ public class MoveablePlatform : MonoBehaviour
             Time -= 1;
         }
         else{
-            if(gameObject.transform.position.x < 0 )
+            if(rb.velocity.x < 0 )
             {
-                rb.velocity = new Vector3(10, 0, 0);
+                rb.velocity = new Vector3(movementSpeed, 0, 0);
             }
-            else if(gameObject.transform.position.x > 0)
+            else if(rb.velocity.x >= 0)
             {
-                rb.velocity = new Vector3(-10,0,0);
+                rb.velocity = new Vector3(movementSpeed * -1f,0,0);
             }
             //if position is in the left side
                 //move to the right
@@ -51,6 +52,15 @@ public class MoveablePlatform : MonoBehaviour
             Time = reset;
         }
         
+    }
+
+    void OnCollisionStay2D(Collision2D col)
+    {
+        Rat rat = col.gameObject.GetComponent<Rat>();
+        if (rat != null)
+        {
+            rat.rb.velocity = rb.velocity;
+        }
     }
 }
 

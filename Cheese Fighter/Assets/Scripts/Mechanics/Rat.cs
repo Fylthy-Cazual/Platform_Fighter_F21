@@ -148,7 +148,7 @@ public class Rat : MonoBehaviour
         lives -= 1;
         transform.position = respawnPos[playerNum];
         rb.velocity = Vector2.zero;
-        hp = 100; // TODO, make generic
+        hp = 0; 
         StopAllCoroutines();
         if (lives == 0) {
             //game over.

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "GameplayManager", menuName = "Managers/GameplayManager")]
 public class GameplayManager : ManagerSO<GameplayManager>
@@ -14,6 +15,7 @@ public class GameplayManager : ManagerSO<GameplayManager>
     // -------------------------------------------------------------------------- INSTANCE PROPERTIES
     #region INSTANCE PROPERTIES
     [HideInInspector] public Rat[] allPlayers;
+    [HideInInspector] public string winner;
     #endregion
 
     // -------------------------------------------------------------------------- GETTERS AND SETTERS
@@ -54,5 +56,28 @@ public class GameplayManager : ManagerSO<GameplayManager>
 
     // -------------------------------------------------------------------------- HELPER CLASSES
     #region HELPER CLASSES
+    public void DecideVictor() //If only one rat has >0 lives, the game ends with this rat as winner
+    {
+        Rat survivor = null;
+        foreach (Rat rat in allPlayers)
+        {
+            if (rat.lives > 0)
+            {
+                if (survivor == null)
+                {
+                    survivor = rat;
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
+        //We have a winner
+        winner = survivor.name;
+        CameraManager.Instance.FixCameraPos();
+        SceneManager.LoadScene("Winscreen");
+        //load scene decalring [survivor] as the winner
+    }
     #endregion
 }

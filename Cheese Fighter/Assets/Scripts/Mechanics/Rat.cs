@@ -53,6 +53,8 @@ public class Rat : MonoBehaviour
     protected TextMesh textMesh;
     #endregion
 
+    private UnityManager UM;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -144,14 +146,16 @@ public class Rat : MonoBehaviour
         }
     }
 
-    public void die() {
+    public void die() 
+    {
         lives -= 1;
         transform.position = respawnPos[playerNum];
         rb.velocity = Vector2.zero;
         hp = 0; 
         StopAllCoroutines();
-        if (lives == 0) {
-            //game over.
+        if (lives == 0) 
+        {
+            GameplayManager.Instance.DecideVictor();
         }
     }
 

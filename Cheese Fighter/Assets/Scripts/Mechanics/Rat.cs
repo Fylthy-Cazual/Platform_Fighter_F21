@@ -48,6 +48,7 @@ public class Rat : MonoBehaviour
     [HideInInspector] public Animator animator;
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public bool action; //True if Player is performing an action, False otherwise.
+    [HideInInspector] public bool isJumping;
     protected bool collidingX;
     protected bool collidingY;
     protected TextMesh textMesh;
@@ -63,6 +64,7 @@ public class Rat : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         action = false;
+        isJumping = false;
         collidingX = false;
         collidingY = false;
         animator.SetFloat(Speed, 0f);
@@ -154,6 +156,7 @@ public class Rat : MonoBehaviour
         hp = 0; 
         StopAllCoroutines();
         action = false;
+        isJumping = false;
         animator.SetTrigger(Return);
         if (lives == 0) 
         {
@@ -197,12 +200,14 @@ public class Rat : MonoBehaviour
     IEnumerator jump()
     {
         animator.SetFloat(Air, 1f);
+        isJumping = true;
         for (int i = 0; i < 15; i++)
         {
             transform.position += (30f - i) / 200 * Vector3.up;
             rb.velocity = new Vector3(0f, 0f, 0f);
             yield return Utils.Frames(1);
         }
+        isJumping = false;
         animator.SetFloat(Air, -1f);
     }
 

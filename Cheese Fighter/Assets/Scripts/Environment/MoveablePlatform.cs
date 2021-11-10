@@ -58,10 +58,20 @@ public class MoveablePlatform : MonoBehaviour
     {
         Rat rat = col.gameObject.GetComponent<Rat>();
         Transform otherTransform = col.gameObject.transform;
-        if (rat != null && otherTransform.position.y > transform.position.y)
+        if (rat != null) 
         {
-            rat.rb.velocity = rb.velocity;
+            if (otherTransform.position.y > transform.position.y)
+            {
+                rat.rb.velocity = rb.velocity;
+            }
+            if (rat.isJumping)
+            {
+                otherTransform.position = new Vector3(otherTransform.position.x,
+                                            otherTransform.position.y + 0.2f,
+                                            otherTransform.position.z);
+            }
         }
+
     }
 }
 

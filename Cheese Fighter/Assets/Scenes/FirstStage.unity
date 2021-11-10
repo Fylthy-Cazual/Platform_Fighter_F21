@@ -1216,8 +1216,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1795379231}
-  Time: 100
-  movementSpeed: 10
+  Time: 200
+  movementSpeed: 5
 --- !u!1001 &1942235473
 PrefabInstance:
   m_ObjectHideFlags: 0

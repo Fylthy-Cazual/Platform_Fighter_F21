@@ -73,7 +73,9 @@ public class GameplayManager : ManagerSO<GameplayManager>
                 }
             }
         }
+        //We have a winner
         winner = survivor.name;
+        CameraManager.Instance.FixCameraPos();
         SceneManager.LoadScene("Winscreen");
         //load scene decalring [survivor] as the winner
     }

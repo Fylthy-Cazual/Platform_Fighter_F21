@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "CameraManager", menuName = "Managers/CameraManager")]
 public class CameraManager : ManagerSO<CameraManager>
@@ -8,6 +9,7 @@ public class CameraManager : ManagerSO<CameraManager>
     public static readonly float MIN_ORTHOGRAPHIC_SIZE = 4.0f;
     public static readonly float MAX_ORTHOGRAPHIC_SIZE = 12.0f;
     public static readonly float ORTHOGRAPHIC_SCALE = 1.0f;
+    public static Vector3 DEFAULT_POSITION = new Vector3(0f, 0f, 0f);
     #endregion
 
     // -------------------------------------------------------------------------- SERIALIZABLE INSPECTOR
@@ -17,6 +19,7 @@ public class CameraManager : ManagerSO<CameraManager>
     // -------------------------------------------------------------------------- INSTANCE PROPERTIES
     #region INSTANCE PROPERTIES
     [ReadOnly] public Camera camera;
+    public bool fixedCam; //Is the camera dynamic or in a fixed position?
     #endregion
 
     // -------------------------------------------------------------------------- GETTERS AND SETTERS
@@ -27,7 +30,10 @@ public class CameraManager : ManagerSO<CameraManager>
     #region INITIALIZATION
     public override void Initialize()
     {
+        Instance = this;
         camera = Camera.main;
+        fixedCam= false;
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
     }
     #endregion
 
@@ -54,12 +60,28 @@ public class CameraManager : ManagerSO<CameraManager>
     #region UNITY EVENT FUNCTIONS
     public override void Update()
     {
-        UpdateCameraPose();
+        if (fixedCam == false) 
+        {
+            UpdateCameraPose();
+        }
+        else
+        {
+            camera.transform.position = DEFAULT_POSITION;
+        }
+    }
+    void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("updated camera");
+        camera = Camera.main;
     }
     #endregion
 
     // -------------------------------------------------------------------------- CASTING
     #region CASTING
+    public void FixCameraPos()
+    {
+        fixedCam = true;
+    }
     #endregion
 
     // -------------------------------------------------------------------------- HELPER CLASSES

@@ -78,7 +78,6 @@ public class Rat : MonoBehaviour
             new Vector3((float)1.5,3), 
             new Vector3((float)3.5,3)
         };
-        UM = GameObject.Find("UnityManager").GetComponent<UnityManager>();
     }
 
     // Update is called once per frame
@@ -154,7 +153,7 @@ public class Rat : MonoBehaviour
         StopAllCoroutines();
         if (lives == 0) 
         {
-            //UM.GetComponent<GameplayManager>().DecideVictor();
+            GameplayManager.Instance.DecideVictor();
         }
     }
 

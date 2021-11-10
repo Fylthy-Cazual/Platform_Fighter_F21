@@ -5,12 +5,12 @@ using TMPro;
 
 public class WinnerManager : MonoBehaviour
 {
-    string winner; 
+    public string winner; 
     TextMeshPro nameDisplay;
     // Start is called before the first frame update
     void Start()
     {
-        winner = GameObject.Find("GameplayManager").GetComponent<GameplayManager>().winner;
+        winner = GameplayManager.Instance.winner;
         nameDisplay = transform.Find("NameDisplay").GetComponent<TextMeshPro>();
     }
 

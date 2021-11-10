@@ -153,6 +153,8 @@ public class Rat : MonoBehaviour
         rb.velocity = Vector2.zero;
         hp = 0; 
         StopAllCoroutines();
+        action = false;
+        animator.SetTrigger(Return);
         if (lives == 0) 
         {
             GameplayManager.Instance.DecideVictor();

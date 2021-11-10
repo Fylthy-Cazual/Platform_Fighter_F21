@@ -57,7 +57,8 @@ public class MoveablePlatform : MonoBehaviour
     void OnCollisionStay2D(Collision2D col)
     {
         Rat rat = col.gameObject.GetComponent<Rat>();
-        if (rat != null)
+        Transform otherTransform = col.gameObject.transform;
+        if (rat != null && otherTransform.position.y > transform.position.y)
         {
             rat.rb.velocity = rb.velocity;
         }

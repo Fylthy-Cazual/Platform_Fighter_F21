@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: UIManager
   m_EditorClassIdentifier: 
   playModeAutomatedSetup: 1
+  CanvasPrefab: {fileID: 6086706929563887513, guid: 723c9a76da75a4faf91aad8cfa3a6855, type: 3}
+  MainMenuPrefab: {fileID: 6499380879283993241, guid: 14e7cc7a06a114c7d83ab83ee59711f9, type: 3}
+  PauseMenuPrefab: {fileID: 3060077951199735884, guid: bed6cc259b13e40dba914113af8e8e6d, type: 3}
+  ScrollTextPrefab: {fileID: 1223239545371503015, guid: ba98cd6d4f26245c8947d109bb8dc491, type: 3}
   BattleUIPrefab: {fileID: 8856521177475956936, guid: 3c88fc85782a74f328d083b3e6afb5f7, type: 3}
+  Canvas: {fileID: 0}

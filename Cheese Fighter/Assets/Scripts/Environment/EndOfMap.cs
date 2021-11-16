@@ -3,7 +3,9 @@
 public class EndOfMap : MonoBehaviour
 {
     private void OnTriggerExit2D(Collider2D c) {
-        Rat rat = c.gameObject.GetComponent<Rat>();
-        rat.die();
+        if (c.gameObject.TryGetComponent(out Rat rat))
+        {
+            rat.die();
+        }
     }
 }

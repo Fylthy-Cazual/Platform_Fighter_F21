@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Rat : MonoBehaviour
 {
@@ -36,7 +37,6 @@ public class Rat : MonoBehaviour
     public int lives = 3;
     public int playerNum;
     public Vector3[] respawnPos;
-    //Transform mTextOverTransform >>>>>>> origin/arik_and_adith:Cheese Fighter/Assets/Scripts/Rat.cs
     public Hitbox hitboxInstance;
     public Projectile projectileInstance;
     public JumpRing jr;
@@ -56,7 +56,27 @@ public class Rat : MonoBehaviour
 
     private UnityManager UM;
 
+    public RatControls ratControls;
+
     // Start is called before the first frame update
+
+    void Awake()
+    {
+        ratControls = new RatControls();
+        ratControls.Battle.Up.performed += ctx => Debug.Log("Up");
+    }
+
+    private void OnEnable()
+    {
+        ratControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        ratControls.Disable();
+    }
+
+
     public void Start()
     {
         speed = speed * SPEED_FACTOR;
@@ -89,17 +109,18 @@ public class Rat : MonoBehaviour
         textMesh.text = "P" + playerNum + " " + hp + "%";
         if (!action)
         {
+            
             if (playerNum == 0) {
-                if (Input.GetKeyDown(KeyCode.W)) //Jump
+                if (ratControls.Battle.Up.triggered) //Jump
                 {
                     startJump();
                 }
 
-                if (Input.GetKey(KeyCode.D)) //Move Right
+                if (ratControls.Battle.Right.ReadValue<float>() == 1f) //Move Right
                 {
                     right();
                 }
-                else if (Input.GetKey(KeyCode.A)) //Move Left
+                else if (ratControls.Battle.Left.ReadValue<float>() == 1f) //Move Left
                 {
                     left();
                 }
@@ -108,15 +129,16 @@ public class Rat : MonoBehaviour
                     animator.SetFloat("Speed", 0f);
                 }
 
-                if (Input.GetKeyDown(KeyCode.J))
+                if (ratControls.Battle.Attack.triggered)
                 {
                     jab();
                 }
-                else if (Input.GetKeyDown(KeyCode.K))
+                else if (ratControls.Battle.Special.triggered)
                 {
                     special();
                 }
             } else if (playerNum == 1) {
+                
                 if (Input.GetKeyDown(KeyCode.UpArrow)) //Jump
                 {
                     startJump();
@@ -143,6 +165,7 @@ public class Rat : MonoBehaviour
                 {
                     special();
                 }
+                 
 
             }    
         }
@@ -219,7 +242,7 @@ public class Rat : MonoBehaviour
     {
         if (isGrounded()) //Player is grounded
         {
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) //Left or Right is held
+            if (ratControls.Battle.Right.triggered || ratControls.Battle.Left.triggered) //Left or Right is held
             {
                 StartCoroutine(dash());
             }
@@ -444,6 +467,11 @@ public class Rat : MonoBehaviour
                 StopAllCoroutines();
             }
         }
+    }
+
+    private void WKeyDown(InputAction.CallbackContext context)
+    {
+        Debug.Log("W key is pressed");
     }
 
     public void OnCollisionExit2D(Collision2D col)

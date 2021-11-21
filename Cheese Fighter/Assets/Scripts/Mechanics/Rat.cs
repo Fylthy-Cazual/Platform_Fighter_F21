@@ -63,7 +63,6 @@ public class Rat : MonoBehaviour
     void Awake()
     {
         ratControls = new RatControls();
-        ratControls.Battle.Up.performed += ctx => Debug.Log("Up");
     }
 
     private void OnEnable()
@@ -242,7 +241,7 @@ public class Rat : MonoBehaviour
     {
         if (isGrounded()) //Player is grounded
         {
-            if (ratControls.Battle.Right.triggered || ratControls.Battle.Left.triggered) //Left or Right is held
+            if (ratControls.Battle.Left.ReadValue<float>() == 1f || ratControls.Battle.Right.ReadValue<float>() == 1f) //Left or Right is held
             {
                 StartCoroutine(dash());
             }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "GameplayManager", menuName = "Managers/GameplayManager")]
@@ -75,9 +76,20 @@ public class GameplayManager : ManagerSO<GameplayManager>
         }
         //We have a winner
         winner = survivor.name;
+        UnityManager.Instance.StartCoroutine(FlashVictor(winner));
+    }
+
+    private static IEnumerator FlashVictor(string winner)
+    {
+        const float enterExitTime = 0.8f;
+        const float holdTime = 2.0f;
+        UIManager.Instance.ScrollText(winner + " is Victorious!", enterExitTime, holdTime);
+        yield return new WaitForSeconds(2 * enterExitTime + holdTime);
+        
         CameraManager.Instance.FixCameraPos();
         SceneManager.LoadScene("Winscreen");
         //load scene decalring [survivor] as the winner
     }
+
     #endregion
 }

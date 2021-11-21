@@ -94,6 +94,17 @@ public class UIManager : ManagerSO<UIManager>
         PushUI(scrollText);
     }
     
+    public void ScrollText(string text, float enterExitTime, float holdTime)
+    {
+        ScrollText scrollText = Instantiate(ScrollTextPrefab, UIManager.Instance.Canvas.transform)
+            .GetComponent<ScrollText>();
+        scrollText.text.text = text;
+        scrollText.enterTime = enterExitTime;
+        scrollText.holdTime = holdTime;
+        scrollText.exitTime = enterExitTime;
+        PushUI(scrollText);
+    }
+    
     public void ScrollFight()
     {
         ScrollText scrollText = Instantiate(ScrollTextPrefab, UIManager.Instance.Canvas.transform)

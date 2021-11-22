@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6764028396959115479}
   - component: {fileID: 6764028396959115473}
   - component: {fileID: 6764028396959115474}
+  - component: {fileID: 3678082195981286995}
   m_Layer: 0
   m_Name: Cowboy
   m_TagString: p1
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6764028396959115476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.78, y: 0.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,17 +103,21 @@ MonoBehaviour:
   hp: 100
   speed: 5
   weight: 5
-  jumps: 3
   maxJumps: 3
   dir: 1
-  animator: {fileID: 6764028396959115474}
-  rb: {fileID: 6764028396959115479}
-  action: 0
+  sr: {fileID: 6764028396959115477}
+  lives: 3
+  playerNum: 0
+  respawnPos: []
   hitboxInstance: {fileID: 611896959018789032, guid: 9dc1651513b7144c8b428f6838a3dcc9, type: 3}
   projectileInstance: {fileID: 6210537255937045933, guid: 6c620d6cfffe149baa77ce37e2a36041, type: 3}
   jr: {fileID: 3214954651038685773, guid: 365bbc70b022d4069885301c3f1da55e, type: 3}
   trail: {fileID: 7153925090116310025, guid: dfd95e3eba22340709e9b36ee0f2b3af, type: 3}
-  sr: {fileID: 6764028396959115477}
+  jumps: 3
+  animator: {fileID: 6764028396959115474}
+  rb: {fileID: 6764028396959115479}
+  action: 0
+  isJumping: 0
 --- !u!50 &6764028396959115479
 Rigidbody2D:
   serializedVersion: 4
@@ -179,3 +184,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3678082195981286995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6764028396959115476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 0fbd41d5e632641318ba6d1a8a672886, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Battle
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

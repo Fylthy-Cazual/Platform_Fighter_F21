@@ -105,7 +105,7 @@ public class Rat : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        textMesh.text = "P" + playerNum + " " + hp + "%";
+        //textMesh.text = "P" + playerNum + " " + hp + "%";
         if (!action)
         {
             

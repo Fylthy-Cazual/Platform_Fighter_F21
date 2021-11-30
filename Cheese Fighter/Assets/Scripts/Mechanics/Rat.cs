@@ -56,26 +56,8 @@ public class Rat : MonoBehaviour
 
     private UnityManager UM;
 
-    public RatControls ratControls;
-
     // Start is called before the first frame update
-
-    void Awake()
-    {
-        ratControls = new RatControls();
-    }
-
-    private void OnEnable()
-    {
-        ratControls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        ratControls.Disable();
-    }
-
-
+    
     public void Start()
     {
         speed = speed * SPEED_FACTOR;
@@ -105,68 +87,37 @@ public class Rat : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        //textMesh.text = "P" + playerNum + " " + hp + "%";
+        textMesh.text = "P" + playerNum + " " + hp + "%";
         if (!action)
         {
-            
-            if (playerNum == 0) {
-                if (ratControls.Battle.Up.triggered) //Jump
-                {
-                    startJump();
-                }
+            /*
+            if (ratControls.Battle.Up.triggered) //Jump
+            {
+                startJump();
+            }
 
-                if (ratControls.Battle.Right.ReadValue<float>() == 1f) //Move Right
-                {
-                    right();
-                }
-                else if (ratControls.Battle.Left.ReadValue<float>() == 1f) //Move Left
-                {
-                    left();
-                }
-                else //No horizontal movement
-                {
-                    animator.SetFloat("Speed", 0f);
-                }
+            if (ratControls.Battle.Right.ReadValue<float>() == 1f) //Move Right
+            {
+                right();
+            }
+            else if (ratControls.Battle.Left.ReadValue<float>() == 1f) //Move Left
+            {
+                left();
+            }
+            else //No horizontal movement
+            {
+                animator.SetFloat("Speed", 0f);
+            }
 
-                if (ratControls.Battle.Attack.triggered)
-                {
-                    jab();
-                }
-                else if (ratControls.Battle.Special.triggered)
-                {
-                    special();
-                }
-            } else if (playerNum == 1) {
-                
-                if (Input.GetKeyDown(KeyCode.UpArrow)) //Jump
-                {
-                    startJump();
-                }
-
-                if (Input.GetKey(KeyCode.RightArrow)) //Move Right
-                {
-                    right();
-                }
-                else if (Input.GetKey(KeyCode.LeftArrow)) //Move Left
-                {
-                    left();
-                }
-                else //No horizontal movement
-                {
-                    animator.SetFloat("Speed", 0f);
-                }
-
-                if (Input.GetKeyDown(KeyCode.Comma))
-                {
-                    jab();
-                }
-                else if (Input.GetKeyDown(KeyCode.Period))
-                {
-                    special();
-                }
-                 
-
-            }    
+            if (ratControls.Battle.Attack.triggered)
+            {
+                jab();
+            }
+            else if (ratControls.Battle.Special.triggered)
+            {
+                special();
+            }
+            */
         }
     }
 
@@ -241,6 +192,7 @@ public class Rat : MonoBehaviour
     {
         if (isGrounded()) //Player is grounded
         {
+            /*
             if (ratControls.Battle.Left.ReadValue<float>() == 1f || ratControls.Battle.Right.ReadValue<float>() == 1f) //Left or Right is held
             {
                 StartCoroutine(dash());
@@ -249,6 +201,7 @@ public class Rat : MonoBehaviour
             {
                 StartCoroutine(jabG());
             }
+            */
         }
         else //Player is airborne
         {

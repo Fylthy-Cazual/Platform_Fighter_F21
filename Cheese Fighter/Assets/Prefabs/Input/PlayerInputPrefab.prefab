@@ -1,0 +1,220 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7671857589585446520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2817998826323802318}
+  - component: {fileID: 471531941998025471}
+  - component: {fileID: -8994956977368818915}
+  m_Layer: 0
+  m_Name: PlayerInputPrefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2817998826323802318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7671857589585446520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &471531941998025471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7671857589585446520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998fbe1aaeef74bba80e107ee7bb86d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Right:
+    m_Name: Right
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: a0aa3a94-0e8e-4ff2-af4c-cc164f5cbd75
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+  Up:
+    m_Name: Up
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 84a79848-9b62-4d84-91d0-b3601e575caf
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+  Left:
+    m_Name: Left
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 7dca4eb5-0522-4477-bf8e-e6d4dfefb93b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+  Down:
+    m_Name: Down
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 2bac4012-5f19-4065-ba98-15fb5394215a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+  Jab:
+    m_Name: Jab
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 1584cec0-0164-4256-bf7e-ac8925096e6f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+  Special:
+    m_Name: Special
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 3d3dc4e5-df09-4db9-9f70-1f3850025eef
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+--- !u!114 &-8994956977368818915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7671857589585446520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 0fbd41d5e632641318ba6d1a8a672886, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 471531941998025471}
+        m_TargetAssemblyTypeName: User, Assembly-CSharp
+        m_MethodName: UpCallback
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8fd1b4e2-d492-4878-ae6a-4b0e1030859d
+    m_ActionName: Battle/Up[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 471531941998025471}
+        m_TargetAssemblyTypeName: User, Assembly-CSharp
+        m_MethodName: DownCallback
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 474e41f9-aa99-4d9c-a4c6-badb7415fb9a
+    m_ActionName: Battle/Down[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 471531941998025471}
+        m_TargetAssemblyTypeName: User, Assembly-CSharp
+        m_MethodName: LeftCallback
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ace4f0e4-e904-4307-815a-643eb4ed81c7
+    m_ActionName: Battle/Left[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 471531941998025471}
+        m_TargetAssemblyTypeName: User, Assembly-CSharp
+        m_MethodName: RightCallback
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5c38462d-3f63-4cfa-afa2-4d95c0ae6344
+    m_ActionName: Battle/Right[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 471531941998025471}
+        m_TargetAssemblyTypeName: User, Assembly-CSharp
+        m_MethodName: JabCallback
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ff7a2cd6-ea66-4033-b548-0a6f32417d7e
+    m_ActionName: Battle/Attack[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 471531941998025471}
+        m_TargetAssemblyTypeName: User, Assembly-CSharp
+        m_MethodName: SpecialCallback
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fd88fddc-be90-480c-a61f-567008ce534f
+    m_ActionName: Battle/Special[/Keyboard/k]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Battle
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

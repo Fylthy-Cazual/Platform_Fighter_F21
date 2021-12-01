@@ -30,23 +30,23 @@ public class Mafia : Rat
     {
 
         action = true;
-        animator.SetTrigger(Jab_Ground);
-        yield return Utils.Frames(25);
+        //animator.SetTrigger(Jab_Ground);
+        yield return Utils.Frames(175);
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
-            5f, 15, 10, 
-            1.5f * dir, 0.5f, 5, 
+            5f, 30, 30, 
+            3f * dir, 0.5f, 5, 
             2); //How can we increase the range to make the jab a "shooting" action?
-        p.setSpeedX(50f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        p.setSpeedX(0.5f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
         if (dir < 0) p.flip();
         yield return Utils.Frames(10);
         action = false;
-        animator.SetTrigger(Return);
+        //animator.SetTrigger(Return);
     }
 
     protected override IEnumerator jabA() //aerial normal attack
     {
 
-        //Slam straight down
+        //Slam straight down (USE SCOTT'S WORK FOR THE COWBOY)
 
         // PARAMS
         const int setupDuration = 28;
@@ -95,6 +95,8 @@ public class Mafia : Rat
     {
         //Two henchmen appear and shoot in the two cardinal directions
         //The mafia rat is in the middle; can still be damaged
+
+        //Make henchmen objects with their own scripts. Activated when this func is called.
         // PARAMS
         const int setupDuration = 20;
         const int dashDuration = 40;

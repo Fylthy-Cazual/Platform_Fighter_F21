@@ -118,6 +118,7 @@ MonoBehaviour:
   rb: {fileID: 6764028396959115479}
   action: 0
   isJumping: 0
+  up: 0
 --- !u!50 &6764028396959115479
 Rigidbody2D:
   serializedVersion: 4
@@ -197,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 0fbd41d5e632641318ba6d1a8a672886, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -208,7 +209,43 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1862007239111365981}
+        m_TargetAssemblyTypeName: Rat, Assembly-CSharp
+        m_MethodName: UpPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8fd1b4e2-d492-4878-ae6a-4b0e1030859d
+    m_ActionName: Battle/Up[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 474e41f9-aa99-4d9c-a4c6-badb7415fb9a
+    m_ActionName: Battle/Down[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ace4f0e4-e904-4307-815a-643eb4ed81c7
+    m_ActionName: Battle/Left[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5c38462d-3f63-4cfa-afa2-4d95c0ae6344
+    m_ActionName: Battle/Right[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ff7a2cd6-ea66-4033-b548-0a6f32417d7e
+    m_ActionName: Battle/Attack[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd88fddc-be90-480c-a61f-567008ce534f
+    m_ActionName: Battle/Special[/Keyboard/k]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Battle

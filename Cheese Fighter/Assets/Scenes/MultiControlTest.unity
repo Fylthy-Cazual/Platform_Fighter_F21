@@ -277,6 +277,14 @@ PrefabInstance:
       propertyPath: Up.m_Name
       value: Up
       objectReference: {fileID: 0}
+    - target: {fileID: 3678082195981286995, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678082195981286995, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6764028396959115473, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
       propertyPath: m_Offset.y
       value: -0.02560679

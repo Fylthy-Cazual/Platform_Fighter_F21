@@ -54,6 +54,11 @@ public class Rat : MonoBehaviour
     protected TextMesh textMesh;
     #endregion
 
+    #region Input Bools
+    public bool up; 
+
+    #endregion
+
     private UnityManager UM;
 
     // Start is called before the first frame update
@@ -70,11 +75,13 @@ public class Rat : MonoBehaviour
         collidingY = false;
         animator.SetFloat(Speed, 0f);
         animator.SetFloat(Dir, 1f);
+        /*
         textMesh = UIManager.Instance.AttachText(transform, Vector2.up * 1);
         textMesh.text = "Player " + playerNum;
         textMesh.anchor = TextAnchor.MiddleCenter;
         textMesh.alignment = TextAlignment.Center;
         textMesh.characterSize = 0.5f;
+        */
         respawnPos = new []
         {
             new Vector3((float)-2.5,3), 
@@ -87,15 +94,15 @@ public class Rat : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        textMesh.text = "P" + playerNum + " " + hp + "%";
+        //textMesh.text = "P" + playerNum + " " + hp + "%";
         if (!action)
         {
-            /*
-            if (ratControls.Battle.Up.triggered) //Jump
+            
+            if (up) //Jump
             {
                 startJump();
             }
-
+            /*
             if (ratControls.Battle.Right.ReadValue<float>() == 1f) //Move Right
             {
                 right();
@@ -430,5 +437,10 @@ public class Rat : MonoBehaviour
     {
         collidingX = false;
         collidingY = false;
+    }
+
+    public void UpPressed(InputAction.CallbackContext ctx) 
+    {
+        up = true;
     }
 }

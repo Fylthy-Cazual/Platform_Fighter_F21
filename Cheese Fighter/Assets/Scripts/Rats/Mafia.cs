@@ -56,38 +56,32 @@ public class Mafia : Rat
 
         action = true;
         animator.SetTrigger(Jab_Air);
-        for (int i = 0; i < setupDuration; i++)
+        yield return Utils.Frames(10);
+
+        while (!collidingY)
         {
-            Transform myTransform = transform;
-            Vector3 myPosition = myTransform.position;
-            myPosition = new Vector3(myPosition.x,
-                myPosition.y + setupSpeed,
-                myPosition.z);
-            myTransform.position = myPosition;
+            rb.AddForce(new Vector3(0, -2f, 0));
             yield return Utils.Frames(1);
         }
-        
-        while (!collidingY) {
-            makeHitbox(0, 0, 4f,
-                3f, dashDuration, 40,
-                5 * dir, 4, 30,
-                5);
-
-            for (int i = 0; i < dashDuration; i++)
-            {
-                Transform myTransform = transform;
-                Vector3 myPosition = myTransform.position;
-                myPosition = new Vector3(myPosition.x,
-                    myPosition.y - dashSpeed,
-                    myPosition.z);
-                myTransform.position = myPosition;
-                yield return Utils.Frames(1);
-            }
-        }
-        
-        animator.SetTrigger(Return);
 
         yield return Utils.Frames(10);
+        Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
+            5f, 10, 30, 
+            3f * dir, 0.5f, 5, 
+            2); //How can we increase the range to make the jab a "shooting" action?
+        p.setSpeedX(0.8f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        if (dir < 0) p.flip();
+        animator.SetTrigger(Return);
+
+        Projectile d = makeProjectile(0.3f * dir, 0f, 1.6f, 
+            5f, 10, 30, 
+            3f * -dir, 0.5f, 5, 
+            2); //How can we increase the range to make the jab a "shooting" action?
+        d.setSpeedX(0.8f * -dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        if (-dir < 0) d.flip();
+        animator.SetTrigger(Return);
+
+        yield return Utils.Frames(100);
         action = false;
     }
 
@@ -98,46 +92,39 @@ public class Mafia : Rat
 
         //Make henchmen objects with their own scripts. Activated when this func is called.
         // PARAMS
-        const int setupDuration = 20;
-        const int dashDuration = 40;
-        const float setupSpeed = 0.04f;
-        const float dashSpeed = 0.05f;
-        
-        action = true;
-        animator.SetTrigger(Special_Ground); 
-        for (int i = 0; i < setupDuration; i++)
-        {
-            Transform myTransform = transform;
-            Vector3 myPosition = myTransform.position;
-            myPosition = new Vector3(myPosition.x + (setupSpeed * dir),
-                myPosition.y,
-                myPosition.z);
-            myTransform.position = myPosition;
-            yield return Utils.Frames(1);
-        }
-        makeHitbox(0, 0, 4f,
-            3f, dashDuration, 60,
-            2f * dir, 3.2f, 40,
-            5);
-        for (int i = 0; i < dashDuration; i++)
-        {
-            Transform myTransform = transform;
-            Vector3 myPosition = myTransform.position;
-            myPosition = new Vector3(myPosition.x + (dashSpeed * dir),
-                myPosition.y,
-                myPosition.z);
-            myTransform.position = myPosition;
-            yield return Utils.Frames(1);
-        }
-        yield return Utils.Frames(3);
+        yield return Utils.Frames(120);
+        Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
+            5f, 40, 10, 
+            3f * dir, 0.5f, 5, 
+            2); //How can we increase the range to make the jab a "shooting" action?
+        p.setSpeedX(0.05f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        if (dir < 0) p.flip();
+        animator.SetTrigger(Return);
+
+        Projectile d = makeProjectile(0.3f * dir, 0f, 1.6f, 
+            5f, 40, 10, 
+            3f * -dir, 0.5f, 5, 
+            2); //How can we increase the range to make the jab a "shooting" action?
+        d.setSpeedX(0.05f * -dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        if (-dir < 0) d.flip();
+        animator.SetTrigger(Return);
+
+        Projectile u = makeProjectile(0f, 0.3f * dir, 1.6f, 
+            5f, 40, 10, 
+            3f * dir, 0.5f, 5, 
+            2); //How can we increase the range to make the jab a "shooting" action?
+        u.setSpeedY(0.05f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        if (dir < 0) u.flip();
+        animator.SetTrigger(Return);
+
+        yield return Utils.Frames(700);
         action = false;
         animator.SetTrigger(Return);
     }
 
     protected override IEnumerator dash()
     {
-        //Dashing through rats; the more rats you dash through, the more damage you do
-        //If the rat gets hit while dashing, stop dashing and reset the damage
+        //Dash but knocked upwards
 
         // PARAMS
         const int setupDuration = 10;

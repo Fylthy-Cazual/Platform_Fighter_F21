@@ -30,7 +30,7 @@ public class Mafia : Rat
     {
 
         action = true;
-        //animator.SetTrigger(Jab_Ground);
+        animator.SetTrigger(Jab_Ground);
         yield return Utils.Frames(175);
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
             5f, 30, 30, 
@@ -40,12 +40,24 @@ public class Mafia : Rat
         if (dir < 0) p.flip();
         yield return Utils.Frames(10);
         action = false;
-        //animator.SetTrigger(Return);
+        animator.SetTrigger(Return);
     }
 
     protected override IEnumerator jabA() //aerial normal attack
     {
-
+        action = true;
+        animator.SetTrigger(Jab_Air);
+        yield return Utils.Frames(175);
+        Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
+            5f, 30, 30, 
+            3f * dir, 0.5f, 5, 
+            2); //How can we increase the range to make the jab a "shooting" action?
+        p.setSpeedX(0.5f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        if (dir < 0) p.flip();
+        yield return Utils.Frames(10);
+        action = false;
+        animator.SetTrigger(Return);
+        /* Don't have the assets for this one yet
         //Slam straight down (USE SCOTT'S WORK FOR THE COWBOY)
 
         // PARAMS
@@ -71,7 +83,7 @@ public class Mafia : Rat
             2); //How can we increase the range to make the jab a "shooting" action?
         p.setSpeedX(0.8f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
         if (dir < 0) p.flip();
-        animator.SetTrigger(Return);
+       
 
         Projectile d = makeProjectile(0.3f * dir, 0f, 1.6f, 
             5f, 10, 30, 
@@ -83,6 +95,7 @@ public class Mafia : Rat
 
         yield return Utils.Frames(100);
         action = false;
+        */
     }
 
     protected override IEnumerator specialG() //grounded special attack
@@ -92,32 +105,34 @@ public class Mafia : Rat
 
         //Make henchmen objects with their own scripts. Activated when this func is called.
         // PARAMS
-        yield return Utils.Frames(120);
+        action = true;
+        animator.SetTrigger(Special_Ground);
+        yield return Utils.Frames(60);
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
-            5f, 40, 10, 
+            1.6f, 40, 10, 
             3f * dir, 0.5f, 5, 
             2); //How can we increase the range to make the jab a "shooting" action?
-        p.setSpeedX(0.05f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
-        if (dir < 0) p.flip();
-        animator.SetTrigger(Return);
+        p.setSpeedX(0.3f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        
+        
 
         Projectile d = makeProjectile(0.3f * dir, 0f, 1.6f, 
-            5f, 40, 10, 
+            1.6f, 40, 10, 
             3f * -dir, 0.5f, 5, 
             2); //How can we increase the range to make the jab a "shooting" action?
-        d.setSpeedX(0.05f * -dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
-        if (-dir < 0) d.flip();
-        animator.SetTrigger(Return);
+        d.setSpeedX(0.3f * -dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+       
+        
 
         Projectile u = makeProjectile(0f, 0.3f * dir, 1.6f, 
-            5f, 40, 10, 
+            1.6f, 40, 10, 
             3f * dir, 0.5f, 5, 
             2); //How can we increase the range to make the jab a "shooting" action?
-        u.setSpeedY(0.05f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
-        if (dir < 0) u.flip();
-        animator.SetTrigger(Return);
+        u.setSpeedY(0.3f); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+       
+        
 
-        yield return Utils.Frames(700);
+        yield return Utils.Frames(51);
         action = false;
         animator.SetTrigger(Return);
     }
@@ -127,7 +142,7 @@ public class Mafia : Rat
         //Dash but knocked upwards
 
         // PARAMS
-        const int setupDuration = 10;
+        const int setupDuration = 15;
         const int dashDuration = 10;
         const float setupSpeed = 0.04f;
         const float dashSpeed = 0.08f;
@@ -144,7 +159,7 @@ public class Mafia : Rat
             myTransform.position = myPosition;
             yield return Utils.Frames(1);
         }
-        makeHitbox(0, 0, 4f,
+        makeHitbox(dir, 0, 4f,
                     3f, dashDuration, 40,
                     1f * dir, 1.6f, 20,
                     5);

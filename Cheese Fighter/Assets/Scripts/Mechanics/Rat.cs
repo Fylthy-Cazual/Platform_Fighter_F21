@@ -219,7 +219,8 @@ public class Rat : MonoBehaviour
     {
         if (isGrounded()) //Player is grounded
         {
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) //Left or Right is held
+            if ((playerNum == 0 && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) || 
+                (playerNum == 1 && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))) //Left or Right is held
             {
                 StartCoroutine(dash());
             }

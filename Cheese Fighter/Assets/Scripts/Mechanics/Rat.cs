@@ -441,7 +441,8 @@ public class Rat : MonoBehaviour
         {
             if (!action && col.transform.position.y < transform.position.y)
             {
-                animator.SetTrigger(Return);
+                //Debug.Log("calling");
+                //animator.SetTrigger(Return);
                 StopAllCoroutines();
             }
         }

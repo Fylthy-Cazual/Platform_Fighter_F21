@@ -789,7 +789,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ba8625833e6e04900a76ab671fd75cbe, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 69814cd29b63e4a5d81326785fd89bc5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1119,6 +1119,10 @@ PrefabInstance:
     - target: {fileID: 562254612437108642, guid: 2a107297107104ae69f348c30cbdf17d, type: 3}
       propertyPath: m_Name
       value: JumpBuff
+      objectReference: {fileID: 0}
+    - target: {fileID: 562254612437108642, guid: 2a107297107104ae69f348c30cbdf17d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 562254612437108646, guid: 2a107297107104ae69f348c30cbdf17d, type: 3}
       propertyPath: m_RootOrder

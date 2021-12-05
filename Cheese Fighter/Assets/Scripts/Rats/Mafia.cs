@@ -32,7 +32,7 @@ public class Mafia : Rat
         action = true;
         animator.SetTrigger(Jab_Ground);
         yield return Utils.Frames(175);
-        Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
+        Projectile p = makeProjectile(0.3f * dir, 0f, 5f, 
             5f, 30, 30, 
             3f * dir, 0.5f, 5, 
             2); //How can we increase the range to make the jab a "shooting" action?

@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class CharacterManager : ManagerSO<CharacterManager>
+public class CharacterManager : MonoBehaviour
 {
     public Cursor cursor1;
     public Cursor cursor2;
@@ -14,21 +15,14 @@ public class CharacterManager : ManagerSO<CharacterManager>
     }
 
     // Update is called once per frame
-    public override void Update()
+    public void Update()
     {   
         if (cursor1.charSelected == true && cursor2.charSelected == true) {//both players ready
             //Change scene? (Confirmation/start battle screen)
             //Somehow pass on player assignments to gameplaymanager? -prefabs w/ names/tags?
+            SceneManager.LoadScene("FirstStage");
 
         }
     }
-
-
-
-    public override void Initialize()
-    {
-        Instance = this;
-
-    }    
 
 }

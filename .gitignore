@@ -60,6 +60,10 @@ sysinfo.txt
 *.aab
 *.unitypackage
 
+# Ignore IDE and FS Specific
+*.DS_Store
+*.idea
+
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -70,6 +74,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
 
 # Ignore IDE and FS Specific
 *.DS_Store

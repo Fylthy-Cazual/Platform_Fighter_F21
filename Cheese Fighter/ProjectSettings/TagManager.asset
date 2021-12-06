@@ -8,6 +8,7 @@ TagManager:
   - p1
   - p0
   - Wall
+  - Selector
   layers:
   - Default
   - TransparentFX

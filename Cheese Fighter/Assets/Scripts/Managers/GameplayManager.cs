@@ -28,12 +28,17 @@ public class GameplayManager : ManagerSO<GameplayManager>
     public override void Initialize()
     {
         Instance = this;
-        allPlayers = FindObjectsOfType<Rat>();
     }
     #endregion
 
     // -------------------------------------------------------------------------- METHODS AND ROUTINES
     #region METHODS AND ROUTINES
+
+    public void FindPlayers() 
+    {
+        allPlayers = FindObjectsOfType<Rat>();
+    }
+
     public void SetMapBounds(int mapWidth, int mapHeight)
     {
         GameObject mapBounds = new GameObject("MapBounds", typeof(BoxCollider2D), typeof(Rigidbody2D), typeof(EndOfMap));

@@ -108,11 +108,11 @@ public class Rat : MonoBehaviour
                     animator.SetFloat("Speed", 0f);
                 }
 
-                if (Input.GetKeyDown(KeyCode.J))
+                if (Input.GetKeyDown(KeyCode.Z))
                 {
                     jab();
                 }
-                else if (Input.GetKeyDown(KeyCode.K))
+                else if (Input.GetKeyDown(KeyCode.X))
                 {
                     special();
                 }

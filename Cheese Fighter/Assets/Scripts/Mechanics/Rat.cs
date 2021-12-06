@@ -86,6 +86,9 @@ public class Rat : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if (Vector3.Distance(this.transform.position, new Vector3(0,0,0)) > 30) { //HARDCODED FOR NOW
+            die();
+        }
         textMesh.text = "P" + playerNum + " " + hp + "%";
         if (!action)
         {

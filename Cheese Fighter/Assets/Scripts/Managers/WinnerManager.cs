@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class WinnerManager : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class WinnerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Rat[] rats = GameObject.FindObjectsOfType<Rat>();
+        foreach (Rat rat in rats) {
+            Destroy(rat);
+        }
         winner = GameplayManager.Instance.winner;
         nameDisplay = transform.Find("NameDisplay").GetComponent<TextMeshPro>();
     }
@@ -18,5 +23,8 @@ public class WinnerManager : MonoBehaviour
     void Update()
     {
         nameDisplay.text = winner;
+        if (Input.anyKey) {
+            SceneManager.LoadScene("CharSelect");
+        }
     }
 }

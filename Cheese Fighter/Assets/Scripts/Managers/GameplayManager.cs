@@ -28,6 +28,8 @@ public class GameplayManager : ManagerSO<GameplayManager>
     public override void Initialize()
     {
         Instance = this;
+        FindPlayers();
+        //SetMapBounds(35,25);//hardcoded from UnityManager
     }
     #endregion
 
@@ -64,6 +66,7 @@ public class GameplayManager : ManagerSO<GameplayManager>
     #region HELPER CLASSES
     public void DecideVictor() //If only one rat has >0 lives, the game ends with this rat as winner
     {
+        Debug.Log("Test");
         Rat survivor = null;
         foreach (Rat rat in allPlayers)
         {
@@ -88,7 +91,7 @@ public class GameplayManager : ManagerSO<GameplayManager>
     {
         const float enterExitTime = 0.8f;
         const float holdTime = 2.0f;
-        UIManager.Instance.ScrollText(winner + " is Victorious!", enterExitTime, holdTime);
+        //UIManager.Instance.ScrollText(winner + " is Victorious!", enterExitTime, holdTime);
         yield return new WaitForSeconds(2 * enterExitTime + holdTime);
         
         CameraManager.Instance.FixCameraPos();

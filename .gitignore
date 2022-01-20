@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/Cheese Fighter/[Ll]ibrary/
-/Cheese Fighter/[Tt]emp/
-/Cheese Fighter/[Oo]bj/
-/Cheese Fighter/[Bb]uild/
-/Cheese Fighter[Bb]uilds/
-/Cheese Fighter/[Ll]ogs/
-/Cheese Fighter/[Uu]ser[Ss]ettings/
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data

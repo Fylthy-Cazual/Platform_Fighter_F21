@@ -44,11 +44,11 @@ public class Cursor : MonoBehaviour
     {
         if (Input.GetKey(controls[0]) && !charSelected){ //left
             //move cursor left
-            this.transform.position = leftChar.transform.position + new Vector3(-1,-3.03f,-1) + cursorsDistance;
+            this.transform.position = leftChar.transform.position + new Vector3(-1,-3.03f,0) + cursorsDistance;
             currPos = 0;
         } else if (Input.GetKey(controls[1]) && !charSelected){ //right
             //move cursor right
-            this.transform.position = rightChar.transform.position + new Vector3(-1,-3.03f,-1) + cursorsDistance;
+            this.transform.position = rightChar.transform.position + new Vector3(-1,-3.03f,0) + cursorsDistance;
             currPos = 1;
         } else if (Input.GetKey(controls[2])) { //select Character
             this.GetComponent<SpriteRenderer>().enabled = false;

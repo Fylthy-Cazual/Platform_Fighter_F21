@@ -32,7 +32,7 @@ public class CameraManager : ManagerSO<CameraManager>
     {
         Instance = this;
         camera = Camera.main;
-        fixedCam= false;
+        fixedCam= true;
         SceneManager.sceneLoaded += OnLevelFinishedLoading;
     }
     #endregion
@@ -81,6 +81,11 @@ public class CameraManager : ManagerSO<CameraManager>
     public void FixCameraPos()
     {
         fixedCam = true;
+    }
+
+    public void UnfixCameraPos() 
+    {
+        fixedCam = false;
     }
     #endregion
 

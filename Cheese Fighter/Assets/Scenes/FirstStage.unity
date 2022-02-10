@@ -1157,6 +1157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mafia
       objectReference: {fileID: 0}
+    - target: {fileID: 5609661948179963498, guid: e928ca400920b47bd8660dc417cbaf5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e928ca400920b47bd8660dc417cbaf5a, type: 3}
 --- !u!1001 &1781577201
@@ -1402,6 +1406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowboy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6764028396959115476, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6764028396959115477, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -1466,6 +1474,10 @@ PrefabInstance:
     - target: {fileID: 1192799032199647237, guid: 309927afd18a84ef99a7c52604765bff, type: 3}
       propertyPath: m_Name
       value: UnityManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192799032199647237, guid: 309927afd18a84ef99a7c52604765bff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1192799032199647239, guid: 309927afd18a84ef99a7c52604765bff, type: 3}
       propertyPath: m_RootOrder

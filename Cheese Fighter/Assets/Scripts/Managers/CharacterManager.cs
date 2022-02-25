@@ -17,6 +17,7 @@ public class CharacterManager : MonoBehaviour
     {
         cursor1 = GameObject.Find("Player1").GetComponent<Cursor>();
         cursor2 = GameObject.Find("Player2").GetComponent<Cursor>();
+        CameraManager.Instance.FixCameraPos();
     }
 
     // Update is called once per frame

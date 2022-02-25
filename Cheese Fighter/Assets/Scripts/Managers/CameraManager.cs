@@ -32,7 +32,7 @@ public class CameraManager : ManagerSO<CameraManager>
     {
         Instance = this;
         camera = Camera.main;
-        fixedCam= true;
+        fixedCam= false;
         SceneManager.sceneLoaded += OnLevelFinishedLoading;
     }
     #endregion

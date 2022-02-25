@@ -12,6 +12,7 @@ public class UnityManager : MonoBehaviour, IManager
     #region SERIALIZABLE INSPECTOR
     public int mapWidth = 35;
     public int mapHeight = 25;
+    public bool testMode = false;
     public ManagerSO[] ProductionLoadedManagers;
     #endregion
     

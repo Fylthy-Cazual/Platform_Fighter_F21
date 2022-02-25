@@ -66,6 +66,7 @@ public class GameplayManager : ManagerSO<GameplayManager>
     #region HELPER CLASSES
     public void DecideVictor() //If only one rat has >0 lives, the game ends with this rat as winner
     {
+        if (UnityManager.Instance.testMode) return; 
         Debug.Log("Test");
         Rat survivor = null;
         foreach (Rat rat in allPlayers)

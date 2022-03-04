@@ -40,6 +40,7 @@ public class UIManager : ManagerSO<UIManager>
         uiStack = new Stack<UIElement>();
         UnityManager.Instance.InstantiatePrefab(BattleUIPrefab);
         Canvas = Instantiate(CanvasPrefab).GetComponent<Canvas>();
+        DontDestroyOnLoad(Canvas);
     }
     #endregion
 
@@ -135,6 +136,7 @@ public class UIManager : ManagerSO<UIManager>
         Time.timeScale = blocked ? 0.0f : 1.0f;
         if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale > 0.0f)
         {
+            Debug.Log("Pause()");
             Pause();
         }
     }

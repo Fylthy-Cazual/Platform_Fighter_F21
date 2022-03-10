@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class Projectile : Hitbox
 {
+    public ParticleSystem[] sideVFX;
+    public ParticleSystem[] impactVFX;
+
+    private List<ParticleSystem> _sideVFX = new List<ParticleSystem>();
+
     private float speedX;
     private float speedY;
 
     private SpriteRenderer projectileSR;
+
+    private void Start()
+    {
+        foreach (ParticleSystem vfx in sideVFX)
+        {
+            _sideVFX.Add(Instantiate(vfx, transform));
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -47,5 +60,23 @@ public class Projectile : Hitbox
         projectileSR = srs[1];
         projectileSR.flipX = true;
     }
-    
+
+    protected override void SelfDestruct(bool isCollision)
+    {
+        foreach (ParticleSystem vfx in _sideVFX)
+        {
+            vfx.transform.SetParent(null, true);
+            vfx.transform.localScale = new Vector3(1, 1, 1);
+            vfx.Stop();
+        }
+        if (isCollision)
+        {
+            foreach (ParticleSystem vfx in impactVFX)
+            {
+                Instantiate(vfx, transform.position, Quaternion.identity);
+            }
+        }
+
+        base.SelfDestruct(isCollision);
+    }
 }

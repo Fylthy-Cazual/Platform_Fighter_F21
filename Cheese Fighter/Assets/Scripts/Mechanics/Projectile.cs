@@ -57,8 +57,11 @@ public class Projectile : Hitbox
     public void flip()
     {
         SpriteRenderer[] srs = GetComponentsInChildren<SpriteRenderer>();
-        projectileSR = srs[1];
-        projectileSR.flipX = true;
+        if (srs.Length > 1)
+        {
+            projectileSR = srs[1];
+            projectileSR.flipX = true;
+        }
     }
 
     protected override void SelfDestruct(bool isCollision)

@@ -70,7 +70,7 @@ public class Hitbox : MonoBehaviour
         {
            Debug.Log("gotcha!");
            Rat enemy = col.gameObject.GetComponent<Rat>();
-           enemy.takeDmg(damage);
+           enemy.takeDmg(damage, xLaunch, yLaunch);
            enemy.launch2(xLaunch, yLaunch);
            SelfDestruct(true);
         }

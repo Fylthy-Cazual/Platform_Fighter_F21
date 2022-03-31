@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
+    public ParticleSystem damageVFX;
     
     #region STATIC READONLY CONST
     public static readonly float SPEED_FACTOR = 1f / 50f;
@@ -351,9 +352,23 @@ public class Rat : MonoBehaviour
 
     #region hit
 
-    public void takeDmg(float dmg)
+    public void takeDmg(float dmg, float xLaunch, float yLaunch)
     {
         hp += dmg;
+        PlayDamageVFX(xLaunch, yLaunch);
+    }
+
+    private void PlayDamageVFX(float xLaunch, float yLaunch)
+    {
+        Vector3 dir = new Vector3(xLaunch, yLaunch, 0).normalized;
+        Quaternion rot = Quaternion.Euler(0, 0, Vector3.Angle(Vector3.up, dir));
+        if (dir.x > 0)
+        {
+            rot = Quaternion.Euler(0, 0, -Vector3.Angle(Vector3.up, dir));
+        }
+        ParticleSystem vfx = Instantiate(damageVFX, transform.position - dir * 0.5f, rot, transform);
+        ParticleSystem.VelocityOverLifetimeModule vfxVelocity = vfx.velocityOverLifetime;
+        vfxVelocity.y = 2 * Mathf.Log(hp, 2);
     }
 
     public void launch(float x, float y)

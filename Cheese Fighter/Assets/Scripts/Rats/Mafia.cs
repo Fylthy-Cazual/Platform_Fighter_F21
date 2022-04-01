@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class Mafia : Rat
 {
-    
+
     // -------------------------------------------------------------------------- STATIC MEMBERS
     #region STATIC MEMBERS
     #endregion
 
     // -------------------------------------------------------------------------- SERIALIZABLE INSPECTOR
     #region SERIALIZABLE INSPECTOR
+    public ParticleSystem[] specialChargeVFX;
     #endregion
 
     // -------------------------------------------------------------------------- INSTANCE PROPERTIES
@@ -36,7 +37,7 @@ public class Mafia : Rat
             5f, 30, 30, 
             3f * dir, 0.5f, 5, 
             2); //How can we increase the range to make the jab a "shooting" action?
-        p.setSpeedX(0.5f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        p.setSpeedX(0.25f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
         if (dir < 0) p.flip();
         yield return Utils.Frames(10);
         action = false;
@@ -107,12 +108,20 @@ public class Mafia : Rat
         // PARAMS
         action = true;
         animator.SetTrigger(Special_Ground);
+        foreach (ParticleSystem vfx in specialChargeVFX)
+        {
+            vfx.Play();
+        }
         yield return Utils.Frames(60);
+        foreach (ParticleSystem vfx in specialChargeVFX)
+        {
+            vfx.Stop();
+        }
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
             1.6f, 40, 10, 
             3f * dir, 0.5f, 5, 
             2); //How can we increase the range to make the jab a "shooting" action?
-        p.setSpeedX(0.3f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        p.setSpeedX(0.2f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
         
         
 
@@ -120,7 +129,7 @@ public class Mafia : Rat
             1.6f, 40, 10, 
             3f * -dir, 0.5f, 5, 
             2); //How can we increase the range to make the jab a "shooting" action?
-        d.setSpeedX(0.3f * -dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        d.setSpeedX(0.2f * -dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
        
         
 
@@ -128,7 +137,7 @@ public class Mafia : Rat
             1.6f, 40, 10, 
             3f * dir, 0.5f, 5, 
             2); //How can we increase the range to make the jab a "shooting" action?
-        u.setSpeedY(0.3f); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        u.setSpeedY(0.2f); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
        
         
 

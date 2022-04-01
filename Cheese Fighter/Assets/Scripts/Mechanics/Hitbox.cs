@@ -70,15 +70,20 @@ public class Hitbox : MonoBehaviour
         {
            Debug.Log("gotcha!");
            Rat enemy = col.gameObject.GetComponent<Rat>();
-           enemy.takeDmg(damage);
+           enemy.takeDmg(damage, xLaunch, yLaunch);
            enemy.launch2(xLaunch, yLaunch);
-           Destroy(gameObject);
+           SelfDestruct(true);
         }
     }
 
     private IEnumerator exist()
     {
         yield return Utils.Frames(duration);
+        SelfDestruct(false);
+    }
+
+    protected virtual void SelfDestruct(bool isCollision)
+    {
         Destroy(gameObject);
     }
 }

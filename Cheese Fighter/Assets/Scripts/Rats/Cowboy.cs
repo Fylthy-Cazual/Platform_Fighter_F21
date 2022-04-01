@@ -32,7 +32,7 @@ public class Cowboy : Rat
         animator.SetTrigger(Jab_Ground);
         yield return Utils.Frames(25);
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
-            5f, 15, 10, 
+            5f, 60, 10, 
             1.5f * dir, 0.5f, 5, 
             2);
         p.setSpeedX(0.1f * dir);

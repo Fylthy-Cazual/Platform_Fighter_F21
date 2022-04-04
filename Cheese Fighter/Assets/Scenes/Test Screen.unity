@@ -638,6 +638,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6764028396959115474, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cb612fe8da4374dfa948a949003dc037, type: 2}
     - target: {fileID: 6764028396959115476, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
       propertyPath: m_Name
       value: Shulkrat
@@ -1010,7 +1014,7 @@ MonoBehaviour:
   weight: 1
   maxJumps: 2
   dir: 1
-  sr: {fileID: 6764028396959115477, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+  sr: {fileID: 1763019838}
   lives: 3
   playerNum: 0
   respawnPos: []
@@ -1023,6 +1027,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   action: 0
   isJumping: 0
+  dmgmultiplier: 1
+  buffOn: 0
+  buffVal: 0
 --- !u!114 &1763019834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,6 +1061,11 @@ MonoBehaviour:
   rb: {fileID: 0}
   action: 0
   isJumping: 0
+--- !u!212 &1763019838 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6764028396959115477, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+  m_PrefabInstance: {fileID: 887564061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1781577201
 PrefabInstance:
   m_ObjectHideFlags: 0

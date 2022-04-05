@@ -10,7 +10,8 @@ public class Mafia : Rat
 
     // -------------------------------------------------------------------------- SERIALIZABLE INSPECTOR
     #region SERIALIZABLE INSPECTOR
-    public ParticleSystem[] specialChargeVFX;
+    public ParticleSystem groundedNormalChargeVFX;
+    public ParticleSystem[] groundedSpecialChargeVFX;
     #endregion
 
     // -------------------------------------------------------------------------- INSTANCE PROPERTIES
@@ -32,6 +33,14 @@ public class Mafia : Rat
 
         action = true;
         animator.SetTrigger(Jab_Ground);
+        if (dir < 0)
+        {
+            Instantiate(groundedNormalChargeVFX, transform.position + Vector3.left * 0.6f, Quaternion.identity, transform);
+        }
+        else
+        {
+            Instantiate(groundedNormalChargeVFX, transform.position + Vector3.right * 0.6f, Quaternion.identity, transform);
+        }
         yield return Utils.Frames(175);
         Projectile p = makeProjectile(0.3f * dir, 0f, 5f, 
             5f, 30, 30, 
@@ -108,12 +117,12 @@ public class Mafia : Rat
         // PARAMS
         action = true;
         animator.SetTrigger(Special_Ground);
-        foreach (ParticleSystem vfx in specialChargeVFX)
+        foreach (ParticleSystem vfx in groundedSpecialChargeVFX)
         {
             vfx.Play();
         }
         yield return Utils.Frames(60);
-        foreach (ParticleSystem vfx in specialChargeVFX)
+        foreach (ParticleSystem vfx in groundedSpecialChargeVFX)
         {
             vfx.Stop();
         }

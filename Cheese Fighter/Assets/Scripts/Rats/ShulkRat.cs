@@ -36,7 +36,7 @@ public class ShulkRat : Rat
         const float attackDuration = 0.5f;
 
         action = true;
-        //animator.SetTrigger(Jab_Ground);
+        animator.SetTrigger(Jab_Ground);
         yield return Utils.Frames(20);
         for (float i = -0.3f; i < attackDuration; i += 0.05f) 
         {
@@ -48,13 +48,13 @@ public class ShulkRat : Rat
         }
         yield return Utils.Frames(10);
         action = false;
-        //animator.SetTrigger(Return);
+        animator.SetTrigger(Return);
     }
 
     protected override IEnumerator jabA() //aerial normal attack
     {
         action = true;
-        //animator.SetTrigger(Jab_Air);
+        animator.SetTrigger(Jab_Air);
         yield return Utils.Frames(15);
         makeHitbox(0, 1, 2, 
         8f, 15, 10, 
@@ -62,7 +62,7 @@ public class ShulkRat : Rat
         0);
         yield return Utils.Frames(10);
         action = false;
-        //animator.SetTrigger(Return);
+        animator.SetTrigger(Return);
     }
 
     protected override IEnumerator specialG() //buff switch ability in replacement of special ground
@@ -121,7 +121,7 @@ public class ShulkRat : Rat
         const float attackDuration = 0.5f;
         
         action = true;
-        //animator.SetTrigger(Dash); 
+        animator.SetTrigger(Dash); 
         for (int i = 0; i < setupDuration; i++)
         {
             Transform myTransform = transform;
@@ -154,7 +154,7 @@ public class ShulkRat : Rat
         }
         yield return Utils.Frames(10);
         action = false;
-        //animator.SetTrigger(Return);
+        animator.SetTrigger(Return);
     }
 
     #endregion

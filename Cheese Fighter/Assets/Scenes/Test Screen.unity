@@ -638,6 +638,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6764028396959115473, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6764028396959115473, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.2068965
+      objectReference: {fileID: 0}
+    - target: {fileID: 6764028396959115473, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.2068965
+      objectReference: {fileID: 0}
     - target: {fileID: 6764028396959115474, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
       propertyPath: m_Controller
       value: 
@@ -650,6 +662,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: p0
       objectReference: {fileID: 0}
+    - target: {fileID: 6764028396959115477, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1686129523948508958, guid: b39b750819cb64a24a2a54a9db3422c4, type: 3}
     - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1030,37 +1046,6 @@ MonoBehaviour:
   dmgmultiplier: 1
   buffOn: 0
   buffVal: 0
---- !u!114 &1763019834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763019832}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e36f8d14228214c2390a22c46facf931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: mafia
-  hp: 0
-  speed: 2
-  weight: 1
-  maxJumps: 2
-  dir: 1
-  sr: {fileID: 5609661948179963499, guid: e928ca400920b47bd8660dc417cbaf5a, type: 3}
-  lives: 3
-  playerNum: 0
-  respawnPos: []
-  hitboxInstance: {fileID: 611896959018789032, guid: 9dc1651513b7144c8b428f6838a3dcc9, type: 3}
-  projectileInstance: {fileID: 6210537255937045933, guid: f22388236cbec428aa0bf59822e8d278, type: 3}
-  jr: {fileID: 3214954651038685773, guid: 365bbc70b022d4069885301c3f1da55e, type: 3}
-  trail: {fileID: 0}
-  jumps: 0
-  animator: {fileID: 0}
-  rb: {fileID: 0}
-  action: 0
-  isJumping: 0
 --- !u!212 &1763019838 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6764028396959115477, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}

@@ -112,7 +112,7 @@ MonoBehaviour:
   playerNum: 0
   respawnPos: []
   hitboxInstance: {fileID: 611896959018789032, guid: 9dc1651513b7144c8b428f6838a3dcc9, type: 3}
-  projectileInstance: {fileID: 6210537255937045933, guid: f22388236cbec428aa0bf59822e8d278, type: 3}
+  projectileInstance: {fileID: 5466265306255752131, guid: e1ee8ffc51e2f4605b1a865982cd4203, type: 3}
   jr: {fileID: 3214954651038685773, guid: 365bbc70b022d4069885301c3f1da55e, type: 3}
   trail: {fileID: 7153925090116310025, guid: dfd95e3eba22340709e9b36ee0f2b3af, type: 3}
   jumps: 0

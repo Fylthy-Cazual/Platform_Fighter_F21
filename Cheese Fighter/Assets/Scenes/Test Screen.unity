@@ -631,88 +631,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &887564061
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6764028396959115473, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115473, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.2068965
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115473, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.2068965
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115474, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: cb612fe8da4374dfa948a949003dc037, type: 2}
-    - target: {fileID: 6764028396959115476, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_Name
-      value: Shulkrat
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115476, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_TagString
-      value: p0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115477, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1686129523948508958, guid: b39b750819cb64a24a2a54a9db3422c4, type: 3}
-    - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764028396959115478, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4986483735928287394, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
 --- !u!1 &1059436436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,50 +925,6 @@ Transform:
   m_Father: {fileID: 338833444}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1763019832 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6764028396959115476, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-  m_PrefabInstance: {fileID: 887564061}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1763019833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763019832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae95f313379f98e4ea1160704b91029f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: shulkrat
-  hp: 0
-  speed: 2
-  weight: 1
-  maxJumps: 2
-  dir: 1
-  sr: {fileID: 1763019838}
-  lives: 3
-  playerNum: 0
-  respawnPos: []
-  hitboxInstance: {fileID: 611896959018789032, guid: 9dc1651513b7144c8b428f6838a3dcc9, type: 3}
-  projectileInstance: {fileID: 6210537255937045933, guid: f22388236cbec428aa0bf59822e8d278, type: 3}
-  jr: {fileID: 3214954651038685773, guid: 365bbc70b022d4069885301c3f1da55e, type: 3}
-  trail: {fileID: 0}
-  jumps: 0
-  animator: {fileID: 0}
-  rb: {fileID: 0}
-  action: 0
-  isJumping: 0
-  dmgmultiplier: 1
-  buffOn: 0
-  buffVal: 0
---- !u!212 &1763019838 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6764028396959115477, guid: 6f23cf0265dbc46aaa8f6d93b44bc74f, type: 3}
-  m_PrefabInstance: {fileID: 887564061}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1781577201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1242,3 +1116,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f86710a32e3024abda1b0f9d4387e398, type: 3}
+--- !u!1001 &8917791456867907818
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2746346853889996577, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996577, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996577, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996577, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996577, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996577, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996577, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996577, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996577, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996577, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996577, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996579, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_Name
+      value: Shulkrat
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}

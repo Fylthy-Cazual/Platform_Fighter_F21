@@ -66,8 +66,8 @@ public class Cowboy : Rat
         
         while (!collidingY) {
             makeHitbox(0, 0, 4f,
-                3f, dashDuration, 40,
-                5 * dir, 4, 30,
+                3f, dashDuration, 10,
+                1 * dir, 1.4f, 30,
                 5);
 
             for (int i = 0; i < dashDuration; i++)

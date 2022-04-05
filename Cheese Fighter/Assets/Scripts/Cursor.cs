@@ -7,8 +7,10 @@ public class Cursor : MonoBehaviour
     public bool charSelected;
     //public Vector3[] charPositions;
     //public GameObject[] charSelectors;
-    public GameObject leftChar; //Set on Unity
-    public GameObject rightChar;//Set on Unity
+    //public GameObject leftChar; //Set on Unity
+    //public GameObject rightChar;//Set on Unity
+    public GameObject[] charIcons;
+    private int iconCt;
     public KeyCode[] controls; 
     public string ratSelected;
     public int currPos;
@@ -17,6 +19,7 @@ public class Cursor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        iconCt = charIcons.Length;
         if (this.name == "Player1") {
             controls = new KeyCode[]{KeyCode.A, KeyCode.D, KeyCode.X, KeyCode.Z};
             cursorsDistance = new Vector3(0,0,0);
@@ -42,23 +45,23 @@ public class Cursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(controls[0]) && !charSelected){ //left
-            //move cursor left
-            this.transform.position = leftChar.transform.position + new Vector3(-1,-3.03f,0) + cursorsDistance;
-            currPos = 0;
-        } else if (Input.GetKey(controls[1]) && !charSelected){ //right
-            //move cursor right
-            this.transform.position = rightChar.transform.position + new Vector3(-1,-3.03f,0) + cursorsDistance;
-            currPos = 1;
-        } else if (Input.GetKey(controls[2])) { //select Character
+        if (Input.GetKeyDown(controls[0]) && !charSelected) //left
+        { 
+            currPos = (currPos - 1) % iconCt;
+            this.transform.position = charIcons[currPos].transform.position + new Vector3(-1,-3.03f,0) + cursorsDistance;
+        }
+        else if (Input.GetKeyDown(controls[1]) && !charSelected){ //right
+            currPos = (currPos + 1) % iconCt;
+            this.transform.position = charIcons[currPos].transform.position + new Vector3(-1,-3.03f,0) + cursorsDistance;
+        } 
+        else if (Input.GetKeyDown(controls[2])) //select Character
+        { 
             this.GetComponent<SpriteRenderer>().enabled = false;
             charSelected = true;
-            if (currPos == 0) { //select left character
-                ratSelected = leftChar.name; //
-            } else {
-                ratSelected = rightChar.name; //
-            }
-        } else if (Input.GetKey(controls[3])) { //deselect Character
+            ratSelected = charIcons[currPos].name;    
+        } 
+        else if (Input.GetKeyDown(controls[3])) //deselect Character
+        { 
             this.GetComponent<SpriteRenderer>().enabled = true;
             charSelected = false;
             ratSelected = null;

@@ -35,6 +35,7 @@ public class Mafia : Rat
 
         action = true;
         animator.SetTrigger(Jab_Ground);
+
         if (dir < 0)
         {
             Instantiate(groundedNormalChargeVFX, transform.position + Vector3.left * 0.6f, Quaternion.identity, transform);
@@ -44,6 +45,7 @@ public class Mafia : Rat
             Instantiate(groundedNormalChargeVFX, transform.position + Vector3.right * 0.6f, Quaternion.identity, transform);
         }
         yield return Utils.Frames(175);
+
         Projectile p = makeProjectile(0.3f * dir, 0f, 5f, 
             5f, 30, 30, 
             3f * dir, 0.5f, 5, 
@@ -59,7 +61,7 @@ public class Mafia : Rat
     {
         action = true;
         animator.SetTrigger(Jab_Air);
-        yield return Utils.Frames(175);
+        yield return Utils.Frames(30);
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
             5f, 30, 30, 
             3f * dir, 0.5f, 5, 
@@ -152,7 +154,7 @@ public class Mafia : Rat
        
         
 
-        yield return Utils.Frames(51);
+        yield return Utils.Frames(40);
         action = false;
         animator.SetTrigger(Return);
     }
@@ -180,7 +182,7 @@ public class Mafia : Rat
             yield return Utils.Frames(1);
         }
         makeHitbox(dir, 0, 4f,
-                    3f, dashDuration, 40,
+                    3f, dashDuration, 70,
                     1f * dir, 1.6f, 20,
                     5);
         for (int i = 0; i < dashDuration; i++)

@@ -100,7 +100,7 @@ public class ShulkRat : Rat
             maxJumps += 2;
             weight *= 0.75f;
         }
-        yield return new WaitForSeconds(10);
+        yield return Utils.Frames(10);
         animator.SetTrigger(Return);
         buffVal = (buffVal + 1) % 3;
         buffOn = false;
@@ -108,7 +108,6 @@ public class ShulkRat : Rat
         weight = originalWeight;
         speed = originalSpeed;
         maxJumps = originalJumps;
-        yield break;
     }
 
     protected override IEnumerator dash() 

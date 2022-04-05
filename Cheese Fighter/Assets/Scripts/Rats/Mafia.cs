@@ -10,6 +10,8 @@ public class Mafia : Rat
 
     // -------------------------------------------------------------------------- SERIALIZABLE INSPECTOR
     #region SERIALIZABLE INSPECTOR
+    public Projectile groundedNormal;
+    public Projectile groundedSpecial;
     public ParticleSystem groundedNormalChargeVFX;
     public ParticleSystem[] groundedSpecialChargeVFX;
     #endregion
@@ -45,7 +47,7 @@ public class Mafia : Rat
         Projectile p = makeProjectile(0.3f * dir, 0f, 5f, 
             5f, 30, 30, 
             3f * dir, 0.5f, 5, 
-            2); //How can we increase the range to make the jab a "shooting" action?
+            2, groundedNormal); //How can we increase the range to make the jab a "shooting" action?
         p.setSpeedX(0.25f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
         if (dir < 0) p.flip();
         yield return Utils.Frames(10);
@@ -61,7 +63,7 @@ public class Mafia : Rat
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
             5f, 30, 30, 
             3f * dir, 0.5f, 5, 
-            2); //How can we increase the range to make the jab a "shooting" action?
+            2, groundedNormal); //How can we increase the range to make the jab a "shooting" action?
         p.setSpeedX(0.5f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
         if (dir < 0) p.flip();
         yield return Utils.Frames(10);
@@ -129,7 +131,7 @@ public class Mafia : Rat
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
             1.6f, 40, 10, 
             3f * dir, 0.5f, 5, 
-            2); //How can we increase the range to make the jab a "shooting" action?
+            2, groundedSpecial); //How can we increase the range to make the jab a "shooting" action?
         p.setSpeedX(0.2f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
         p.transform.rotation = Quaternion.Euler(0, 0, 90);
         
@@ -137,7 +139,7 @@ public class Mafia : Rat
         Projectile d = makeProjectile(0.3f * dir, 0f, 1.6f, 
             1.6f, 40, 10, 
             3f * -dir, 0.5f, 5, 
-            2); //How can we increase the range to make the jab a "shooting" action?
+            2, groundedSpecial); //How can we increase the range to make the jab a "shooting" action?
         d.setSpeedX(0.2f * -dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
         d.transform.rotation = Quaternion.Euler(0, 0, -90);
 
@@ -145,7 +147,7 @@ public class Mafia : Rat
         Projectile u = makeProjectile(0f, 0.3f * dir, 1.6f, 
             1.6f, 40, 10, 
             3f * dir, 0.5f, 5, 
-            2); //How can we increase the range to make the jab a "shooting" action?
+            2, groundedSpecial); //How can we increase the range to make the jab a "shooting" action?
         u.setSpeedY(0.2f); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
        
         

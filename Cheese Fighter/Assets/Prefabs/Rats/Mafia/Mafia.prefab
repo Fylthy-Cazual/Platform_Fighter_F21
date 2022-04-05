@@ -120,6 +120,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   action: 0
   isJumping: 0
+  groundedNormal: {fileID: 5466265306255752131, guid: e1ee8ffc51e2f4605b1a865982cd4203, type: 3}
+  groundedSpecial: {fileID: 2929565614001412834, guid: d8821fb47c04547d2b88e492997ca4cd, type: 3}
   groundedNormalChargeVFX: {fileID: 5625876620078208451, guid: 3efbc3b4dc4a9463da6f7b2791e835d9, type: 3}
   groundedSpecialChargeVFX:
   - {fileID: 2981748783572598361}

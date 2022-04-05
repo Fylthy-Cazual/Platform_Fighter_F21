@@ -293,7 +293,7 @@ public class Rat : MonoBehaviour
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
                     5f, 15, 10, 
                     3 * dir, 1, 5, 
-                    2);
+                    2, projectileInstance);
         p.setSpeedX(0.1f * dir);
         if (dir < 0) {
             p.flip();
@@ -339,13 +339,13 @@ public class Rat : MonoBehaviour
     public Projectile makeProjectile(float xPos, float yPos, float width, 
                             float height, int duration, float damage,
                             float xLaunch, float yLaunch, float hitstun,
-                            float blockstun)
+                            float blockstun, Projectile proj)
     {
-        Projectile proj = Instantiate(projectileInstance);
-        proj.setHitbox(this.transform, gameObject.tag, xPos, yPos, width, 
+        Projectile p = Instantiate(proj);
+        p.setHitbox(transform, gameObject.tag, xPos, yPos, width, 
                         height, duration, damage, xLaunch, yLaunch,
                         hitstun, blockstun);
-        return proj;
+        return p;
     }
 
     #endregion

@@ -24,7 +24,7 @@ public class WinnerManager : MonoBehaviour
     {
         nameDisplay.text = winner;
         if (Input.anyKey) {
-            SceneManager.LoadScene("CharSelect");
+            SceneManager.LoadScene("NewCharSelect");
         }
     }
 }

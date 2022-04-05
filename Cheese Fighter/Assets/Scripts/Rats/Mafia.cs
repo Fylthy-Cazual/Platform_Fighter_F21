@@ -122,7 +122,7 @@ public class Mafia : Rat
             3f * dir, 0.5f, 5, 
             2); //How can we increase the range to make the jab a "shooting" action?
         p.setSpeedX(0.2f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
-        
+        p.transform.rotation = Quaternion.Euler(0, 0, 90);
         
 
         Projectile d = makeProjectile(0.3f * dir, 0f, 1.6f, 
@@ -130,8 +130,8 @@ public class Mafia : Rat
             3f * -dir, 0.5f, 5, 
             2); //How can we increase the range to make the jab a "shooting" action?
         d.setSpeedX(0.2f * -dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
-       
-        
+        d.transform.rotation = Quaternion.Euler(0, 0, -90);
+
 
         Projectile u = makeProjectile(0f, 0.3f * dir, 1.6f, 
             1.6f, 40, 10, 

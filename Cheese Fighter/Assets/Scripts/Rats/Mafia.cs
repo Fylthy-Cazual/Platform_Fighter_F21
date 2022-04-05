@@ -44,8 +44,7 @@ public class Mafia : Rat
         {
             Instantiate(groundedNormalChargeVFX, transform.position + Vector3.right * 0.6f, Quaternion.identity, transform);
         }
-        yield return Utils.Frames(175);
-
+        yield return Utils.Frames(45);
         Projectile p = makeProjectile(0.3f * dir, 0f, 5f, 
             5f, 30, 30, 
             3f * dir, 0.5f, 5, 
@@ -61,12 +60,20 @@ public class Mafia : Rat
     {
         action = true;
         animator.SetTrigger(Jab_Air);
-        yield return Utils.Frames(30);
+        if (dir < 0)
+        {
+            Instantiate(groundedNormalChargeVFX, transform.position + Vector3.left * 0.6f, Quaternion.identity, transform);
+        }
+        else
+        {
+            Instantiate(groundedNormalChargeVFX, transform.position + Vector3.right * 0.6f, Quaternion.identity, transform);
+        }
+        yield return Utils.Frames(45);
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
             5f, 30, 30, 
             3f * dir, 0.5f, 5, 
             2, groundedNormal); //How can we increase the range to make the jab a "shooting" action?
-        p.setSpeedX(0.5f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
+        p.setSpeedX(0.25f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
         if (dir < 0) p.flip();
         yield return Utils.Frames(10);
         action = false;
@@ -131,7 +138,7 @@ public class Mafia : Rat
             vfx.Stop();
         }
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
-            1.6f, 40, 10, 
+            1.6f, 40, 20, 
             3f * dir, 0.5f, 5, 
             2, groundedSpecial); //How can we increase the range to make the jab a "shooting" action?
         p.setSpeedX(0.2f * dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
@@ -139,7 +146,7 @@ public class Mafia : Rat
         
 
         Projectile d = makeProjectile(0.3f * dir, 0f, 1.6f, 
-            1.6f, 40, 10, 
+            1.6f, 40, 20, 
             3f * -dir, 0.5f, 5, 
             2, groundedSpecial); //How can we increase the range to make the jab a "shooting" action?
         d.setSpeedX(0.2f * -dir); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.
@@ -147,7 +154,7 @@ public class Mafia : Rat
 
 
         Projectile u = makeProjectile(0f, 0.3f * dir, 1.6f, 
-            1.6f, 40, 10, 
+            1.6f, 40, 20, 
             3f * dir, 0.5f, 5, 
             2, groundedSpecial); //How can we increase the range to make the jab a "shooting" action?
         u.setSpeedY(0.2f); //Jerry will this increase the speed? We can't tell because the animation will play at a constant rate.

@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1554222245523121860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1554222245523121857}
+  - component: {fileID: 5466265306255752131}
+  - component: {fileID: 1554222245523121863}
+  m_Layer: 0
+  m_Name: Mafia1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1554222245523121857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554222245523121860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4432479162181271082}
+  - {fileID: 6048444845259818270}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5466265306255752131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554222245523121860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a7c97382685433098f56e77449bf3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visible: 0
+  sideVFX:
+  - {fileID: 4759156428774374918, guid: 3dc5cb6df4eda4a689c249b199d019c6, type: 3}
+  - {fileID: 1537778598099956691, guid: 5410f47c226754fe3a807b9062fd4024, type: 3}
+  impactVFX:
+  - {fileID: 3184451940370079664, guid: cd9c4fdad16f44db99748c84325d2f7c, type: 3}
+  - {fileID: 4538124486104778332, guid: c8632e183254140c3987ec0f3f449008, type: 3}
+--- !u!61 &1554222245523121863
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554222245523121860}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.15}
+  m_EdgeRadius: 0
+--- !u!1001 &2459964415336935841
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1554222245523121857}
+    m_Modifications:
+    - target: {fileID: 211393168566454659, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+      propertyPath: m_Name
+      value: Mafia1Main1VFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279059775161421707, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279059775161421707, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279059775161421707, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279059775161421707, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279059775161421707, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279059775161421707, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279059775161421707, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279059775161421707, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279059775161421707, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279059775161421707, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279059775161421707, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+--- !u!4 &4432479162181271082 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2279059775161421707, guid: 11bb0b103a07743faa2027cba234efa1, type: 3}
+  m_PrefabInstance: {fileID: 2459964415336935841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3845473049945121001
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1554222245523121857}
+    m_Modifications:
+    - target: {fileID: 7398774096748619255, guid: 29bf811caf98245f395600528518093c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398774096748619255, guid: 29bf811caf98245f395600528518093c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398774096748619255, guid: 29bf811caf98245f395600528518093c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398774096748619255, guid: 29bf811caf98245f395600528518093c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398774096748619255, guid: 29bf811caf98245f395600528518093c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398774096748619255, guid: 29bf811caf98245f395600528518093c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398774096748619255, guid: 29bf811caf98245f395600528518093c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398774096748619255, guid: 29bf811caf98245f395600528518093c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398774096748619255, guid: 29bf811caf98245f395600528518093c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398774096748619255, guid: 29bf811caf98245f395600528518093c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398774096748619255, guid: 29bf811caf98245f395600528518093c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926809470624457727, guid: 29bf811caf98245f395600528518093c, type: 3}
+      propertyPath: m_Name
+      value: Mafia1Main2VFX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29bf811caf98245f395600528518093c, type: 3}
+--- !u!4 &6048444845259818270 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7398774096748619255, guid: 29bf811caf98245f395600528518093c, type: 3}
+  m_PrefabInstance: {fileID: 3845473049945121001}
+  m_PrefabAsset: {fileID: 0}

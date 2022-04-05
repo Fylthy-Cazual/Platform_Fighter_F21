@@ -139,6 +139,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   action: 0
   isJumping: 0
+  groundedNormal: {fileID: 6210537255937045933, guid: 6c620d6cfffe149baa77ce37e2a36041, type: 3}
 --- !u!61 &6764028396959115473
 BoxCollider2D:
   m_ObjectHideFlags: 0

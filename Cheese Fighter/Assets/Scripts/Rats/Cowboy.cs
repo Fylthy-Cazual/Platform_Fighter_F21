@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class Cowboy : Rat
 {
-    
+
     // -------------------------------------------------------------------------- STATIC MEMBERS
     #region STATIC MEMBERS
     #endregion
 
     // -------------------------------------------------------------------------- SERIALIZABLE INSPECTOR
     #region SERIALIZABLE INSPECTOR
+    public Projectile groundedNormal;
     #endregion
 
     // -------------------------------------------------------------------------- INSTANCE PROPERTIES
@@ -34,7 +35,7 @@ public class Cowboy : Rat
         Projectile p = makeProjectile(0.3f * dir, 0f, 1.6f, 
             5f, 60, 10, 
             1.5f * dir, 0.5f, 5, 
-            2);
+            2, groundedNormal);
         p.setSpeedX(0.1f * dir);
         if (dir < 0) p.flip();
         yield return Utils.Frames(10);

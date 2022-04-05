@@ -38,7 +38,6 @@ public class Cowboy : Rat
             2, groundedNormal);
         p.setSpeedX(0.1f * dir);
         if (dir < 0) p.flip();
-        yield return Utils.Frames(10);
         action = false;
         animator.SetTrigger(Return);
     }
@@ -110,7 +109,7 @@ public class Cowboy : Rat
             yield return Utils.Frames(1);
         }
         makeHitbox(0, 0, 4f,
-            3f, dashDuration, 60,
+            3f, dashDuration, 20,
             2f * dir, 3.2f, 40,
             5);
         for (int i = 0; i < dashDuration; i++)

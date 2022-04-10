@@ -93,8 +93,8 @@ public class Cowboy : Rat
         // PARAMS
         const int setupDuration = 20;
         const int dashDuration = 40;
-        const float setupSpeed = 0.04f;
-        const float dashSpeed = 0.05f;
+        const float setupSpeed = 0.06f;
+        const float dashSpeed = 0.15f;
         
         action = true;
         animator.SetTrigger(Special_Ground); 

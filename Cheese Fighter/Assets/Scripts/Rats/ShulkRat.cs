@@ -41,7 +41,7 @@ public class ShulkRat : Rat
         for (float i = -0.3f; i < attackDuration; i += 0.05f) 
         {
             makeHitbox(0.6f * dir, -i, 8f, 
-            1, 5, 1, 
+            1, 5, 2, 
             0.5f * dir, 0.5f, 1 * dmgmultiplier, 
             0);
             yield return Utils.Frames(1);
@@ -57,7 +57,7 @@ public class ShulkRat : Rat
         animator.SetTrigger(Jab_Air);
         yield return Utils.Frames(15);
         makeHitbox(0, 1, 2, 
-        8f, 15, 10, 
+        8f, 15, 25, 
         0.5f, 1f * dir, 1 * dmgmultiplier, 
         0);
         yield return Utils.Frames(10);
@@ -147,7 +147,7 @@ public class ShulkRat : Rat
         for (float i = -0.3f; i < attackDuration; i += 0.05f) 
         {
             makeHitbox(0.6f * dir, i, 8f, 
-            1, 5, 1, 
+            1, 5, 2, 
             0.5f * dir, 0.5f, 0.5f * dmgmultiplier, 
             0);
             yield return Utils.Frames(1);

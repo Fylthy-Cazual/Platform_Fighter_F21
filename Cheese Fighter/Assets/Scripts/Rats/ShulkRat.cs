@@ -121,6 +121,7 @@ public class ShulkRat : Rat
         
         action = true;
         animator.SetTrigger(Dash); 
+
         for (int i = 0; i < setupDuration; i++)
         {
             Transform myTransform = transform;

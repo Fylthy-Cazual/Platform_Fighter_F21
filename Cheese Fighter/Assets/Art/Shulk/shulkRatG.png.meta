@@ -29,6 +29,39 @@ TextureImporter:
   - first:
       213: -490636966257726436
     second: shulkRatG_8
+  - first:
+      213: 4369897684169346928
+    second: shulkRatG_9
+  - first:
+      213: -3649611313409832416
+    second: shulkRatG_10
+  - first:
+      213: -7880065176200715337
+    second: shulkRatG_11
+  - first:
+      213: 6685187140766675255
+    second: shulkRatG_12
+  - first:
+      213: 4913912377236797214
+    second: shulkRatG_13
+  - first:
+      213: -150969522482571237
+    second: shulkRatG_14
+  - first:
+      213: -4511979059307034562
+    second: shulkRatG_15
+  - first:
+      213: -4402487710623761554
+    second: shulkRatG_16
+  - first:
+      213: -2510712297374623520
+    second: shulkRatG_17
+  - first:
+      213: 2682902885466293331
+    second: shulkRatG_18
+  - first:
+      213: -934095783419932039
+    second: shulkRatG_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -73,7 +106,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 140
+  spritePixelsToUnits: 145
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1

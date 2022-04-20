@@ -1167,6 +1167,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996578, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_Size.x
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996578, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_Size.y
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746346853889996578, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2746346853889996579, guid: c68e5c21cc0ba42bc8df2ad535f9ca86, type: 3}
       propertyPath: m_Name
       value: Shulkrat

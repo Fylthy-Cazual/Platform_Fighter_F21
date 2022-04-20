@@ -1,70 +1,34 @@
 fileFormatVersion: 2
-guid: 453c67874406e4d32abe077ca27468f1
+guid: d4f2ee0f7a29a4de1a66ca76ea2a21f9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1468840079478838611
-    second: rogue_rat_side_attack_spritesheet 1_0
+      213: -276738820742298275
+    second: rogue_rat_up_attack_spritesheet_0
   - first:
-      213: -5685635585341141834
-    second: rogue_rat_side_attack_spritesheet 1_1
+      213: 775993056931106290
+    second: rogue_rat_up_attack_spritesheet_1
   - first:
-      213: -2891296380816432668
-    second: rogue_rat_side_attack_spritesheet 1_2
+      213: 2561133091643446190
+    second: rogue_rat_up_attack_spritesheet_2
   - first:
-      213: 4885015245377927698
-    second: rogue_rat_side_attack_spritesheet 1_3
+      213: -2475442897689102834
+    second: rogue_rat_up_attack_spritesheet_3
   - first:
-      213: 8591736482807876655
-    second: rogue_rat_side_attack_spritesheet 1_4
+      213: -6272383619430050616
+    second: rogue_rat_up_attack_spritesheet_4
   - first:
-      213: 6203023349298320346
-    second: rogue_rat_side_attack_spritesheet 1_5
+      213: -8868995465864512853
+    second: rogue_rat_up_attack_spritesheet_5
   - first:
-      213: -1098647910839603793
-    second: rogue_rat_side_attack_spritesheet 1_6
+      213: 6687272305964247219
+    second: rogue_rat_up_attack_spritesheet_6
   - first:
-      213: 8105430256797489131
-    second: rogue_rat_side_attack_spritesheet 1_7
+      213: 8271768922737950842
+    second: rogue_rat_up_attack_spritesheet_7
   - first:
-      213: 7914233528784574721
-    second: rogue_rat_side_attack_spritesheet 1_8
-  - first:
-      213: -4437547788431431570
-    second: rogue_rat_side_attack_spritesheet 1_9
-  - first:
-      213: 615165613728698586
-    second: rogue_rat_side_attack_spritesheet_0
-  - first:
-      213: -8011671630836022277
-    second: rogue_rat_side_attack_spritesheet_1
-  - first:
-      213: 2300172892857146279
-    second: rogue_rat_side_attack_spritesheet_2
-  - first:
-      213: 7451069066059600984
-    second: rogue_rat_side_attack_spritesheet_3
-  - first:
-      213: 3810122342395511894
-    second: rogue_rat_side_attack_spritesheet_4
-  - first:
-      213: -8053314822671844709
-    second: rogue_rat_side_attack_spritesheet_5
-  - first:
-      213: -6671760480601035776
-    second: rogue_rat_side_attack_spritesheet_6
-  - first:
-      213: 5065268127495793218
-    second: rogue_rat_side_attack_spritesheet_7
-  - first:
-      213: -2985467448412331501
-    second: rogue_rat_side_attack_spritesheet_8
-  - first:
-      213: 2354816124402364470
-    second: rogue_rat_side_attack_spritesheet_9
-  - first:
-      213: -3990566456421444675
-    second: rogue_rat_side_attack_spritesheet_10
+      213: 3462937811597893539
+    second: rogue_rat_up_attack_spritesheet_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -164,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rogue_rat_side_attack_spritesheet_0
+      name: rogue_rat_up_attack_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 92
-        y: 315
-        width: 189
-        height: 153
+        x: 0
+        y: 640
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad0955ccdd1898800800000000000000
-      internalID: 615165613728698586
+      spriteID: d55481e3283d82cf0800000000000000
+      internalID: -276738820742298275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rogue_rat_side_attack_spritesheet_1
+      name: rogue_rat_up_attack_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 408
-        y: 315
-        width: 228
-        height: 144
+        x: 320
+        y: 640
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf3c1f27913d0d090800000000000000
-      internalID: -8011671630836022277
+      spriteID: 2fd4c8ae291e4ca00800000000000000
+      internalID: 775993056931106290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rogue_rat_side_attack_spritesheet_2
+      name: rogue_rat_up_attack_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 648
-        y: 315
-        width: 229
-        height: 144
+        x: 640
+        y: 640
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ab9bb82f0bdbef10800000000000000
-      internalID: 2300172892857146279
+      spriteID: ea3d7e53af8fa8320800000000000000
+      internalID: 2561133091643446190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rogue_rat_side_attack_spritesheet_3
+      name: rogue_rat_up_attack_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 999
-        y: 315
-        width: 197
-        height: 153
+        x: 0
+        y: 320
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 854526f86d3876760800000000000000
-      internalID: 7451069066059600984
+      spriteID: e063a7dccc575add0800000000000000
+      internalID: -2475442897689102834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rogue_rat_side_attack_spritesheet_4
+      name: rogue_rat_up_attack_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 1395
-        y: 315
-        width: 170
-        height: 224
+        x: 320
+        y: 320
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,20 +226,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6548341651640e430800000000000000
-      internalID: 3810122342395511894
+      spriteID: 8c494e4a45404f8a0800000000000000
+      internalID: -6272383619430050616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rogue_rat_side_attack_spritesheet_5
+      name: rogue_rat_up_attack_spritesheet_5
       rect:
         serializedVersion: 2
-        x: 101
+        x: 640
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa789e1d9ffae480800000000000000
+      internalID: -8868995465864512853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rogue_rat_up_attack_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
-        width: 171
-        height: 219
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,41 +268,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9ab14a46d0ec3090800000000000000
-      internalID: -8053314822671844709
+      spriteID: 3b86e494bb6fdcc50800000000000000
+      internalID: 6687272305964247219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rogue_rat_side_attack_spritesheet_6
+      name: rogue_rat_up_attack_spritesheet_7
       rect:
         serializedVersion: 2
-        x: 260
-        y: 154
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00c294ff0352963a0800000000000000
-      internalID: -6671760480601035776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rogue_rat_side_attack_spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 435
+        x: 320
         y: 0
-        width: 130
-        height: 214
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,20 +289,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24aae7766827b4640800000000000000
-      internalID: 5065268127495793218
+      spriteID: a7049ef620a3bc270800000000000000
+      internalID: 8271768922737950842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rogue_rat_side_attack_spritesheet_8
+      name: rogue_rat_up_attack_spritesheet_8
       rect:
         serializedVersion: 2
-        x: 737
+        x: 640
         y: 0
-        width: 179
-        height: 196
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,50 +310,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31224e06c2d7196d0800000000000000
-      internalID: -2985467448412331501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rogue_rat_side_attack_spritesheet_9
-      rect:
-        serializedVersion: 2
-        x: 1048
-        y: 0
-        width: 211
-        height: 139
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6307d5ee9ccfda020800000000000000
-      internalID: 2354816124402364470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rogue_rat_side_attack_spritesheet_10
-      rect:
-        serializedVersion: 2
-        x: 1372
-        y: 0
-        width: 189
-        height: 148
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db3196863f8ae98c0800000000000000
-      internalID: -3990566456421444675
+      spriteID: 3af9f8b9793de0030800000000000000
+      internalID: 3462937811597893539
       vertices: []
       indices: 
       edges: []

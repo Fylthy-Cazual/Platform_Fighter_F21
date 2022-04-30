@@ -140,6 +140,7 @@ public class ShulkRat : Rat
         Instantiate(buffChargeVFX, transform);
         yield return new WaitForSeconds(0.5f);
         Instantiate(buffReleaseVFX, transform);
+        yield return new WaitForSeconds(0.25f);
         currBuffVFX = Instantiate(buffVFX[type], transform);
         currBuffFrames = framesPerBuff;
         switch (type)

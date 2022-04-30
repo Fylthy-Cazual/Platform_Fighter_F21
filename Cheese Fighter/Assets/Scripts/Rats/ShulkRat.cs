@@ -7,17 +7,28 @@ public class ShulkRat : Rat
 
     // -------------------------------------------------------------------------- STATIC MEMBERS
     #region STATIC MEMBERS
+    private enum Buff { NONE = -1, DAMAGE = 0, SPEED = 1, JUMP = 2 }
+    private const int framesPerBuff = 600;
     #endregion
 
     // -------------------------------------------------------------------------- SERIALIZABLE INSPECTOR
     #region SERIALIZABLE INSPECTOR
+    public ParticleSystem buffChargeVFX;
+    public ParticleSystem buffReleaseVFX;
+    public ParticleSystem[] buffVFX;
     #endregion
 
     // -------------------------------------------------------------------------- INSTANCE PROPERTIES
     #region INSTANCE PROPERTIES
-    public float dmgmultiplier = 1;
-    public bool buffOn = false;
-    public int buffVal = 0;
+    private int buffVal = 0;
+    private Buff currBuff = Buff.NONE;
+    private int currBuffFrames;
+    private ParticleSystem currBuffVFX;
+
+    private float damageMultiplier = 1;
+    private int baseJumps;
+    private float baseSpeed;
+    private float baseWeight;
     #endregion
 
     // -------------------------------------------------------------------------- GETTERS AND SETTERS
@@ -30,6 +41,53 @@ public class ShulkRat : Rat
 
     // -------------------------------------------------------------------------- METHODS AND ROUTINES
     #region METHODS AND ROUTINES
+    public override void Start()
+    {
+        base.Start();
+
+        baseJumps = maxJumps;
+        baseSpeed = speed;
+        baseWeight = weight;
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        if (currBuff != Buff.NONE)
+        {
+            currBuffFrames -= 1;
+            if (currBuffFrames <= 0)
+            {
+                currBuffVFX.Stop();
+                currBuff = Buff.NONE;
+            }
+        }
+        switch (currBuff)
+        {
+            case Buff.NONE:
+                SetStats(1, 0, 1, 1);
+                break;
+            case Buff.DAMAGE:
+                SetStats(2, 0, 0.75f, 1);
+                break;
+            case Buff.SPEED:
+                SetStats(0.75f, 0, 2, 1);
+                break;
+            case Buff.JUMP:
+                SetStats(1, 2, 1, 0.75f);
+                break;
+        }
+    }
+
+    private void SetStats(float damageMultiplier, int additionalJumps, float speedMultiplier, float weightMultiplier)
+    {
+        this.damageMultiplier = damageMultiplier;
+        maxJumps = baseJumps + additionalJumps;
+        speed = baseSpeed * speedMultiplier;
+        weight = baseWeight * weightMultiplier;
+    }
+
     protected override IEnumerator jabG() //grounded normal attack
     {
         // PARAMS
@@ -42,7 +100,7 @@ public class ShulkRat : Rat
         {
             makeHitbox(0.6f * dir, -i, 8f, 
             1, 5, 2, 
-            0.5f * dir, 0.5f, 1 * dmgmultiplier, 
+            0.5f * dir, 0.5f, 1 * damageMultiplier, 
             0);
             yield return Utils.Frames(1);
         }
@@ -58,7 +116,7 @@ public class ShulkRat : Rat
         yield return Utils.Frames(15);
         makeHitbox(0, 1, 2, 
         8f, 15, 25, 
-        0.5f, 1f * dir, 1 * dmgmultiplier, 
+        0.5f, 1f * dir, 1 * damageMultiplier, 
         0);
         yield return Utils.Frames(10);
         action = false;
@@ -67,47 +125,37 @@ public class ShulkRat : Rat
 
     protected override IEnumerator specialG() //buff switch ability in replacement of special ground
     {
-        action = true;
         //animator.SetTrigger(Special_Ground);
-        yield return Utils.Frames(1);
-        if (buffOn) {
-            action = false;
-            yield break;
-        } else {
+        yield return Utils.Frames(0);
+        if (currBuff == Buff.NONE && !action) {
+            action = true;
             StartCoroutine(buff(buffVal));
-            action = false;
-            yield break;
+            buffVal = (buffVal + 1) % 3;
         }
     }
 
     protected IEnumerator buff(int type) 
     {
-        buffOn = true;
-        float originalSpeed = speed;
-        float originalWeight = weight;
-        int originalJumps = maxJumps;
-
         //animator.SetTrigger(Jab_Ground);
-        if (type == 0) {   //damage buff
-            dmgmultiplier *= 2;
-            speed *= 0.75f;
+        Instantiate(buffChargeVFX, transform);
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(buffReleaseVFX, transform);
+        yield return new WaitForSeconds(0.25f);
+        currBuffVFX = Instantiate(buffVFX[type], transform);
+        currBuffFrames = framesPerBuff;
+        switch (type)
+        {
+            case 0:
+                currBuff = Buff.DAMAGE;
+                break;
+            case 1:
+                currBuff = Buff.SPEED;
+                break;
+            case 2:
+                currBuff = Buff.JUMP;
+                break;
         }
-        if (type == 1) {   //speed buff
-            speed *= 2;
-            dmgmultiplier *= 0.75f; 
-        }
-        if (type == 2) {   //jump buff
-            maxJumps += 2;
-            weight *= 0.75f;
-        }
-        yield return Utils.Frames(10);
-        animator.SetTrigger(Return);
-        buffVal = (buffVal + 1) % 3;
-        buffOn = false;
-        dmgmultiplier = 1;
-        weight = originalWeight;
-        speed = originalSpeed;
-        maxJumps = originalJumps;
+        action = false;
     }
 
     protected override IEnumerator dash() 
@@ -148,7 +196,7 @@ public class ShulkRat : Rat
         {
             makeHitbox(0.6f * dir, i, 8f, 
             1, 5, 2, 
-            0.5f * dir, 0.5f, 0.5f * dmgmultiplier, 
+            0.5f * dir, 0.5f, 0.5f * damageMultiplier, 
             0);
             yield return Utils.Frames(1);
         }

@@ -58,7 +58,7 @@ public class Rat : MonoBehaviour
     private UnityManager UM;
 
     // Start is called before the first frame update
-    public void Start()
+    public virtual void Start()
     {
         speed = speed * SPEED_FACTOR;
         jumps = maxJumps;
@@ -85,7 +85,7 @@ public class Rat : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Update()
+    public virtual void Update()
     {
         if (Vector3.Distance(this.transform.position, new Vector3(0,0,0)) > 30) { //HARDCODED FOR NOW
             die();

@@ -7,17 +7,22 @@ public class ShulkRat : Rat
 
     // -------------------------------------------------------------------------- STATIC MEMBERS
     #region STATIC MEMBERS
+    private enum Buff { DAMAGE = 0, SPEED = 1, JUMP = 2 }
     #endregion
 
     // -------------------------------------------------------------------------- SERIALIZABLE INSPECTOR
     #region SERIALIZABLE INSPECTOR
+    public ParticleSystem buffChargeVFX;
+    public ParticleSystem buffReleaseVFX;
+    public ParticleSystem[] buffVFX;
     #endregion
 
     // -------------------------------------------------------------------------- INSTANCE PROPERTIES
     #region INSTANCE PROPERTIES
-    public float dmgmultiplier = 1;
-    public bool buffOn = false;
-    public int buffVal = 0;
+    private float dmgmultiplier = 1;
+    private bool buffOn = false;
+    private int buffVal = 0;
+    private ParticleSystem currBuffVFX;
     #endregion
 
     // -------------------------------------------------------------------------- GETTERS AND SETTERS
@@ -88,19 +93,29 @@ public class ShulkRat : Rat
         int originalJumps = maxJumps;
 
         //animator.SetTrigger(Jab_Ground);
-        if (type == 0) {   //damage buff
-            dmgmultiplier *= 2;
-            speed *= 0.75f;
+        Instantiate(buffChargeVFX, transform);
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(buffReleaseVFX, transform);
+        currBuffVFX = Instantiate(buffVFX[buffVal], transform);
+        switch (type)
+        {
+            case (int)Buff.DAMAGE:
+                dmgmultiplier *= 2;
+                speed *= 0.75f;
+                break;
+            case (int)Buff.SPEED:
+                speed *= 2;
+                dmgmultiplier *= 0.75f;
+                break;
+            case (int)Buff.JUMP:
+                maxJumps += 2;
+                weight *= 0.75f;
+                break;
         }
-        if (type == 1) {   //speed buff
-            speed *= 2;
-            dmgmultiplier *= 0.75f; 
-        }
-        if (type == 2) {   //jump buff
-            maxJumps += 2;
-            weight *= 0.75f;
-        }
-        yield return Utils.Frames(10);
+        yield return Utils.Frames(60);
+        Debug.Log("HI");
+        currBuffVFX.Stop();
+        Debug.Log(currBuffVFX.isPlaying);
         animator.SetTrigger(Return);
         buffVal = (buffVal + 1) % 3;
         buffOn = false;

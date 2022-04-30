@@ -184,6 +184,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   action: 0
   isJumping: 0
-  dmgmultiplier: 1
-  buffOn: 0
-  buffVal: 0
+  buffChargeVFX: {fileID: 5463937795021716834, guid: 105850fa9c076430e9c1616e8630e35f, type: 3}
+  buffReleaseVFX: {fileID: 4722828680183640327, guid: 7e9f17fc76e3e47558661c416b66922b, type: 3}
+  buffVFX:
+  - {fileID: 728571099721185990, guid: 6f7c3130f5fc44002b680a5eacf08f68, type: 3}
+  - {fileID: 8118357124852155531, guid: 39c4c35fc56304dfabf205b4bdfebe96, type: 3}
+  - {fileID: 1411571027005877246, guid: bdb7d4a8838a7458a8277e4e1da54a53, type: 3}
